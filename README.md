@@ -8,7 +8,7 @@ Contributors to the project are strictly limated to AIE Students as part of thei
 
 Members (example):
  - John Doe: designer
- - John Smith: programmer
+ - Duncan Sykes: Programmer, Music & SFX
  - Sandra Dee: artist
 
 
