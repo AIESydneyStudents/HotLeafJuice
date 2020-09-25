@@ -6,10 +6,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ### Contributors:
 Contributors to the project are strictly limated to AIE Students as part of their group work project.
 
-Members (example):
- - John Doe: designer
- - Duncan Sykes: Programmer, Music & SFX
- - Sandra Dee: artist
+Members:
+ - Hayden: Designer, Documentation, Level Design
+ - Duncan: Programmer, Music & SFX, Shaders, Version Control, Caffiene Addict
+ - Caitlin: Artist, Concepting, Animation
+ - Jacques: Artists, Modelling, Animation, Rigging, Music / SFX
+ - O'Neil:: Designer, Documentation, Mechanics, Testing
 
 
 ## Build Steps:
