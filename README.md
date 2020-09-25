@@ -1,7 +1,11 @@
-# PROJECT NAME
+# Cafe Chaos
 
 ## About the Game
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- Player makes tea for customers in a chaotic cafe environment
+- Player as a worker at a cafe
+- Fast placed & chaotic gameplay 
+- Low poly and minimalist art style with Cel and Vertex shading.
+- Exaggerated proportions and the emphasis on the aesthetic of the tea
 
 ### Contributors:
 Contributors to the project are strictly limated to AIE Students as part of their group work project.
