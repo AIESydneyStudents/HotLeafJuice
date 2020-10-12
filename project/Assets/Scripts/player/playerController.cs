@@ -6,10 +6,12 @@ public class playerController : MonoBehaviour
 {
     public float movementSpeed;
     public float cameraSpeed;
+    [SerializeField] private bool ClickToMove;
 
     [SerializeField] Camera playerCamera;
     [SerializeField] private player_movement MovementController;
-    [SerializeField] private bool ClickToMove;
+    [SerializeField] private player_interaction InteractionController;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,23 @@ public class playerController : MonoBehaviour
         
     }
 
+
+    
     // Update is called once per frame
     void Update()
+    {
+        ConfigMovementType();
+
+
+
+
+
+
+        
+    }
+
+
+    void ConfigMovementType()
     {
         if (ClickToMove == true)
         {
@@ -28,6 +45,6 @@ public class playerController : MonoBehaviour
         {
             MovementController.ControllerMovement(Time.deltaTime);
         }
-        
     }
+
 }
