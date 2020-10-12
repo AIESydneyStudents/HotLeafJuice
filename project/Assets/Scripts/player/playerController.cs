@@ -30,9 +30,16 @@ public class playerController : MonoBehaviour
     [Tooltip("The range at which an object can be interacted with")]
     [Range(0f,5f)] 
     public float pickupRange;
-    
+    [SerializeField]
+    [Tooltip("Keybinding for interacting with objects")]
+    private KeyCode InteractionKeybinding;
+    [SerializeField]
+    [Tooltip("Keybinding to open menu")]
+    private KeyCode MenuKeybinding;
+    [SerializeField]
+    [Tooltip("Inventory Keybinding")]
+    private KeyCode InventoryKeybinding;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +52,20 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        InteractionController.DetectObject(MovementController.playerAgent);
-        ConfigMovementType();
-
+        if (Input.GetKeyDown(InteractionKeybinding))
+        {
+            InteractionController.PickupObject(MovementController.playerAgent);
+        }
+        if (Input.GetKeyDown(MenuKeybinding))
+        {
+            Debug.Log("Not yet implemented");
+        }
+        if (Input.GetKeyDown(InventoryKeybinding))
+        {
+            InteractionController.ListInventory();
+        }
         
+        ConfigMovementType();
 
     }
 

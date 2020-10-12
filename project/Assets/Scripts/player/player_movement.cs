@@ -32,7 +32,6 @@ public class player_movement : MonoBehaviour
         xPos = Input.GetAxis("Vertical");
         playerAgent.gameObject.transform.Rotate(0, yPos, 0);
         forward.x += xPos;
-        Debug.Log(xPos);
         playerAgent.gameObject.transform.position += playerAgent.gameObject.transform.forward * xPos * playerAgent.speed * dt;
         xPos = 0;
         yPos = 0;

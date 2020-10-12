@@ -1,43 +1,60 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class player_interaction : MonoBehaviour
 {
-    //[SerializeField] protected GameObject[] ob;
+    // Class properties
     private float radius;
-    
+    public List<GameObject> tealeaves;
+
+    // Getters and Setters
     public void setRadius(float _radius)
     {
         radius = _radius;
     }
-
     public float getRadius()
     {
         return radius;
     }
 
+    
 
-
-    public void DetectObject(NavMeshAgent player)
+    // Methods and functions
+    public void PickupObject(NavMeshAgent player)
     {
+        GameObject tea = new GameObject();
         Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
         foreach (var col in hitColliders)
         {
-            if (col.gameObject.tag == "interaction")
+            if (col.gameObject.tag == "tea leaves")
             {
+                tea = col.gameObject;
+
+                tealeaves.Add(tea);
+
+                Debug.Log("Object : " + col.gameObject.name.ToUpper() + " : picked up.");
                 col.gameObject.SetActive(false);
             }
             
         }
+
+        
     }
 
-
-    private void PickUpObject()
+    public void ListInventory()
     {
-
+        Debug.Log("LIST OF CURRENT OBJECTS IN LEAF INVENTORY");
+        foreach(var leaves in tealeaves)
+        {
+            Debug.Log("Object : " + leaves.name.ToUpper());
+            
+        }
     }
+    
 
     private void DestroyObject()
     {
