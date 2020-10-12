@@ -9,6 +9,7 @@ public class camerafollow : MonoBehaviour
     [SerializeField] float zOffset;
     [SerializeField] float cameraMoveRange;
     [SerializeField] float cameraMoveSpeed;
+
     private Vector3 sidescroll;
     private Vector3 old;
     private float cameraSpeed;
@@ -21,7 +22,7 @@ public class camerafollow : MonoBehaviour
         cameraSpeed = cameraMoveSpeed;
         sidescroll = transform.position;
     }
-    void Update()
+    void FixedUpdate()
     {
         cameraSpeed = cameraMoveSpeed;
         if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
