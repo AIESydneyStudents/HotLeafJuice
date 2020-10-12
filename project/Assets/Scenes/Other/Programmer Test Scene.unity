@@ -961,7 +961,8 @@ MonoBehaviour:
   ClickToMove: 0
   playerCamera: {fileID: 1721121660}
   InteractionController: {fileID: 182006158}
-  pickupRange: 1.11
+  meshTransform: {fileID: 47221119}
+  pickupRange: 1.74
   InteractionKeybinding: 101
   MenuKeybinding: 27
   InventoryKeybinding: 32
