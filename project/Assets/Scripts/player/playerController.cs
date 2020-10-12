@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -27,6 +28,8 @@ public class playerController : MonoBehaviour
     [SerializeField]
     [Tooltip("Interaction Controller Scriptable Object")]
     private player_interaction InteractionController;
+    [SerializeField]
+    private Transform meshTransform;
     [Tooltip("The range at which an object can be interacted with")]
     [Range(0f,5f)] 
     public float pickupRange;
@@ -39,6 +42,9 @@ public class playerController : MonoBehaviour
     [SerializeField]
     [Tooltip("Inventory Keybinding")]
     private KeyCode InventoryKeybinding;
+    [SerializeField]
+    [Tooltip("Place Object KeyBinding")]
+    private KeyCode PlaceObjectKeybinding;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +69,13 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(InventoryKeybinding))
         {
             InteractionController.ListInventory();
+        }
+        if (Input.GetKeyDown(PlaceObjectKeybinding))
+        {
+            GameObject obToPlace = InteractionController.tealeaves.First();
+            obToPlace.transform.position = meshTransform.position;
+            
+            InteractionController.PlaceObject(obToPlace);
         }
         
         ConfigMovementType();

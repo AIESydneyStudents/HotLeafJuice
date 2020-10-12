@@ -10,6 +10,7 @@ public class player_interaction : MonoBehaviour
     // Class properties
     private float radius;
     public List<GameObject> tealeaves;
+    
 
     // Getters and Setters
     public void setRadius(float _radius)
@@ -26,7 +27,7 @@ public class player_interaction : MonoBehaviour
     // Methods and functions
     public void PickupObject(NavMeshAgent player)
     {
-        GameObject tea = new GameObject();
+        GameObject tea;
         Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
         foreach (var col in hitColliders)
         {
@@ -50,23 +51,23 @@ public class player_interaction : MonoBehaviour
         Debug.Log("LIST OF CURRENT OBJECTS IN LEAF INVENTORY");
         foreach(var leaves in tealeaves)
         {
-            Debug.Log("Object : " + leaves.name.ToUpper());
-            
+            Debug.Log("Object : " + leaves.name.ToUpper());           
         }
     }
     
 
+
+    public void PlaceObject(GameObject ob)
+    {
+        tealeaves.Remove(tealeaves.First());
+        GameObject placed = Instantiate(ob) as GameObject;
+        placed.transform.position = ob.transform.position;
+        placed.gameObject.SetActive(true);
+    }
     private void DestroyObject()
     {
 
     }
-
-    public void CreateObject(GameObject gameObject)
-    {
-        GameObject newObject = Instantiate(gameObject) as GameObject;
-        newObject.transform.position = gameObject.transform.position;
-    }
-
 
 }
 
