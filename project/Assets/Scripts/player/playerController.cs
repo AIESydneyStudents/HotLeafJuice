@@ -30,7 +30,6 @@ public class playerController : MonoBehaviour
     [Tooltip("The range at which an object can be interacted with")]
     [Range(0f,5f)] 
     public float pickupRange;
-
     
 
     
@@ -50,12 +49,13 @@ public class playerController : MonoBehaviour
         InteractionController.DetectObject(MovementController.playerAgent);
         ConfigMovementType();
 
+        
 
     }
 
     void ConfigInteractionController()
     {
-        InteractionController.radius = pickupRange;
+        InteractionController.setRadius(pickupRange);
 
     }
     void ConfigMovementType()

@@ -6,9 +6,17 @@ using UnityEngine.AI;
 public class player_interaction : MonoBehaviour
 {
     //[SerializeField] protected GameObject[] ob;
-    public float radius;
+    private float radius;
     
+    public void setRadius(float _radius)
+    {
+        radius = _radius;
+    }
 
+    public float getRadius()
+    {
+        return radius;
+    }
 
 
 
@@ -26,19 +34,20 @@ public class player_interaction : MonoBehaviour
     }
 
 
-    public void PickUpObject()
+    private void PickUpObject()
     {
 
     }
 
-    public void DestroyObject()
+    private void DestroyObject()
     {
 
     }
 
-    public void CreateObject()
+    public void CreateObject(GameObject gameObject)
     {
-
+        GameObject newObject = Instantiate(gameObject) as GameObject;
+        newObject.transform.position = gameObject.transform.position;
     }
 
 
