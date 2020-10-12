@@ -4,19 +4,41 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    // Movement settings
+    [Header("Movement Settings")]
+    [SerializeField] 
+    [Tooltip("Movement controller scriptable object")]
+    private player_movement MovementController;
     public float movementSpeed;
     public float cameraSpeed;
-    [SerializeField] private bool ClickToMove;
 
-    [SerializeField] Camera playerCamera;
-    [SerializeField] private player_movement MovementController;
-    [SerializeField] private player_interaction InteractionController;
+    [SerializeField]
+    [Tooltip("Enable or Disable click to move")]
+    private bool ClickToMove;
+    // Camera settings
+    [Header("Camera Settings")]
+    [SerializeField]
+    [Tooltip("Camera Assigned to player")]
+    Camera playerCamera;
+
+
+    // Interaction Settings
+    [Header("Interaction Settings")]
+    [SerializeField]
+    [Tooltip("Interaction Controller Scriptable Object")]
+    private player_interaction InteractionController;
+    [Tooltip("The range at which an object can be interacted with")]
+    [Range(0f,5f)] 
+    public float pickupRange;
+
+    
+
     
     // Start is called before the first frame update
     void Start()
     {
         MovementController.playerAgent.speed = movementSpeed;
-        
+        ConfigInteractionController();
     }
 
 
@@ -24,17 +46,18 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        InteractionController.DetectObject(MovementController.playerAgent);
         ConfigMovementType();
 
 
-
-
-
-
-        
     }
 
+    void ConfigInteractionController()
+    {
+        InteractionController.radius = pickupRange;
 
+    }
     void ConfigMovementType()
     {
         if (ClickToMove == true)
