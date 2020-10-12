@@ -11,17 +11,24 @@ public class playerController : MonoBehaviour
     [Tooltip("Movement controller scriptable object")]
     private player_movement MovementController;
     public float movementSpeed;
-    public float cameraSpeed;
-
     [SerializeField]
     [Tooltip("Enable or Disable click to move")]
     private bool ClickToMove;
+
+
     // Camera settings
     [Header("Camera Settings")]
     [SerializeField]
+    [Tooltip("Camera controller")]
+    private camerafollow cameraController;
+    [SerializeField]
     [Tooltip("Camera Assigned to player")]
     Camera playerCamera;
-
+    [SerializeField]
+    [Range(0, 10)]
+    private float cameraMoveRange;
+    [Range(1, 10)]
+    public float cameraSpeed;
 
     // Interaction Settings
     [Header("Interaction Settings")]
@@ -51,6 +58,7 @@ public class playerController : MonoBehaviour
     {
         MovementController.playerAgent.speed = movementSpeed;
         ConfigInteractionController();
+        cameraController.InitCamera();
     }
 
 
@@ -77,7 +85,7 @@ public class playerController : MonoBehaviour
             
             InteractionController.PlaceObject(obToPlace);
         }
-        
+        cameraController.UpdateCamera(playerCamera, meshTransform, cameraMoveRange, cameraSpeed);
         ConfigMovementType();
 
     }
