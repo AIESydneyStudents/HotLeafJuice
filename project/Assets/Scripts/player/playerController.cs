@@ -24,9 +24,11 @@ public class playerController : MonoBehaviour
     [SerializeField]
     [Tooltip("Camera Assigned to player")]
     Camera playerCamera;
+
     [SerializeField]
     [Range(0, 10)]
     private float cameraMoveRange;
+
     [Range(1, 10)]
     public float cameraSpeed;
 

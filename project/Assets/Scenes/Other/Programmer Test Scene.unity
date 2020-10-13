@@ -961,13 +961,12 @@ MonoBehaviour:
   ClickToMove: 0
   cameraController: {fileID: 2139726757}
   playerCamera: {fileID: 1721121660}
-  zOffset: 0
-  cameraMoveRange: 5.4
+  cameraMoveRange: 4.78
   cameraSpeed: 3.59
   InteractionController: {fileID: 182006158}
   meshTransform: {fileID: 47221119}
   pickupRange: 1.74
-  InteractionKeybinding: 101
+  InteractionKeybinding: 104
   MenuKeybinding: 27
   InventoryKeybinding: 32
   PlaceObjectKeybinding: 282
