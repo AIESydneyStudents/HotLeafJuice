@@ -60,6 +60,11 @@ public class playerController : MonoBehaviour
     [SerializeField]
     private TeaController teaController;
 
+    [SerializeField]
+    [Tooltip("Player Ingredients")]
+    private List<ingredient> ingredients;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +78,7 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ingredients = teaController.ingredients;
         if (Input.GetKeyDown(InteractionKeybinding))
         {
             InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
@@ -94,6 +100,7 @@ public class playerController : MonoBehaviour
         }
         cameraController.UpdateCamera(playerCamera, meshTransform, cameraMoveRange, cameraSpeed);
         ConfigMovementType();
+
 
     }
 

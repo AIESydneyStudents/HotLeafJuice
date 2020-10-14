@@ -64,6 +64,7 @@ public class player_interaction : MonoBehaviour
     public void PlaceObject(GameObject ob)
     {
         tealeaves.Remove(tealeaves.First());
+        ingredients.Remove(ingredients.First());
         GameObject placed = Instantiate(ob) as GameObject;
         placed.transform.position = ob.transform.position;
         placed.gameObject.SetActive(true);
