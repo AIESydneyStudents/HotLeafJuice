@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementController: {fileID: 1112248290}
   movementSpeed: 5.04
-  ClickToMove: 0
+  ClickToMove: 1
   cameraController: {fileID: 2139726757}
   playerCamera: {fileID: 1721121660}
   cameraMoveRange: 4.78
@@ -1220,7 +1220,7 @@ MonoBehaviour:
   InteractionController: {fileID: 182006158}
   meshTransform: {fileID: 47221119}
   pickupRange: 1.74
-  InteractionKeybinding: 104
+  InteractionKeybinding: 101
   MenuKeybinding: 27
   InventoryKeybinding: 32
   PlaceObjectKeybinding: 282
@@ -1559,7 +1559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808755454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 3.52, z: 6.85}
+  m_LocalPosition: {x: -5.11, y: 3.52, z: 10.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 92014208}

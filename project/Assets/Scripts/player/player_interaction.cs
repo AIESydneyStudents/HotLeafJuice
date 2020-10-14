@@ -75,26 +75,5 @@ public class player_interaction : MonoBehaviour
 
 }
 
-public class tea_controller : player_interaction
-{
-   
-    private int scoreCheck;
-    protected void CreateTea(List<ingredient> ingredients)
-    {
-        foreach(var ingred in ingredients)
-        {
-            scoreCheck += ingred.GetScoreNumber();
-        }
-
-    }
-
-
-    protected void DestroyTea()
-    {
-
-    }
-
-
-}
 
 
