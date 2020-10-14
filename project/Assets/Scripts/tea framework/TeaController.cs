@@ -7,11 +7,9 @@ public class TeaController: MonoBehaviour
 
     public List<ingredient> ingredients;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
-        
-
 
 
     }
@@ -20,5 +18,12 @@ public class TeaController: MonoBehaviour
     void Update()
     {
         
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            foreach(var ingred in ingredients)
+            {
+                Debug.Log(ingred.GetName());
+            }
+        }
     }
 }

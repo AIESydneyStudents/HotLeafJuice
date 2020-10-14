@@ -55,6 +55,11 @@ public class playerController : MonoBehaviour
     [Tooltip("Place Object KeyBinding")]
     private KeyCode PlaceObjectKeybinding;
 
+    // Tea Framework
+    [Header("Tea Framework")]
+    [SerializeField]
+    private TeaController teaController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +75,7 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetKeyDown(InteractionKeybinding))
         {
-            InteractionController.PickupObject(MovementController.playerAgent);
+            InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
         }
         if (Input.GetKeyDown(MenuKeybinding))
         {

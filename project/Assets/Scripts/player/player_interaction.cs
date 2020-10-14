@@ -9,6 +9,7 @@ public class player_interaction : MonoBehaviour
 {
     // Class properties
     private float radius;
+    private List<ingredient> ingredients;
     public List<GameObject> tealeaves;
     
 
@@ -22,10 +23,10 @@ public class player_interaction : MonoBehaviour
         return radius;
     }
 
-    
+   
 
     // Methods and functions
-    public void PickupObject(NavMeshAgent player)
+    public void PickupObject(NavMeshAgent player, List<ingredient> ingredients)
     {
         GameObject tea;
         Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
@@ -36,6 +37,9 @@ public class player_interaction : MonoBehaviour
                 tea = col.gameObject;
 
                 tealeaves.Add(tea);
+
+                ingredients.Add(tea.GetComponent<ingredient>());
+
 
                 Debug.Log("Object : " + col.gameObject.name.ToUpper() + " : picked up.");
                 col.gameObject.SetActive(false);
@@ -73,8 +77,14 @@ public class player_interaction : MonoBehaviour
 
 public class tea_controller : player_interaction
 {
-    protected void CreateTea()
+   
+    private int scoreCheck;
+    protected void CreateTea(List<ingredient> ingredients)
     {
+        foreach(var ingred in ingredients)
+        {
+            scoreCheck += ingred.GetScoreNumber();
+        }
 
     }
 
