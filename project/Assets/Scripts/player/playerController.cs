@@ -104,6 +104,7 @@ public class playerController : MonoBehaviour
             GameObject obToPlace = ingredients.First().gameObject;
             obToPlace.transform.position = meshTransform.position;
             InteractionController.PlaceObject(MovementController.playerAgent, obToPlace);
+
             
         }
         cameraController.UpdateCamera(playerCamera, meshTransform, cameraMoveRange, cameraSpeed);

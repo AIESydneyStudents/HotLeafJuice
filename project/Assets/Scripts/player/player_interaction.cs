@@ -11,7 +11,8 @@ public class player_interaction : MonoBehaviour
     private float radius;
     List<ingredient> ingredients;
     public List<GameObject> tealeaves;
-    
+
+    private TeaController teacontroller;
 
     // Getters and Setters
     public void setRadius(float _radius)
