@@ -6,6 +6,7 @@ TagManager:
   tags:
   - interaction
   - tea leaves
+  - bench
   layers:
   - Default
   - TransparentFX

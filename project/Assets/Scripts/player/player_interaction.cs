@@ -9,7 +9,7 @@ public class player_interaction : MonoBehaviour
 {
     // Class properties
     private float radius;
-    private List<ingredient> ingredients;
+    List<ingredient> ingredients;
     public List<GameObject> tealeaves;
     
 
@@ -23,7 +23,7 @@ public class player_interaction : MonoBehaviour
         return radius;
     }
 
-   
+
 
     // Methods and functions
     public void PickupObject(NavMeshAgent player, List<ingredient> ingredients)
@@ -44,10 +44,8 @@ public class player_interaction : MonoBehaviour
                 Debug.Log("Object : " + col.gameObject.name.ToUpper() + " : picked up.");
                 col.gameObject.SetActive(false);
             }
-            
-        }
 
-        
+        }
     }
 
     public void ListInventory()
@@ -58,16 +56,25 @@ public class player_interaction : MonoBehaviour
             Debug.Log("Object : " + leaves.name.ToUpper());           
         }
     }
-    
+   
 
-
-    public void PlaceObject(GameObject ob)
+    public void PlaceObject(NavMeshAgent player, GameObject ob)
     {
-        tealeaves.Remove(tealeaves.First());
-        ingredients.Remove(ingredients.First());
-        GameObject placed = Instantiate(ob) as GameObject;
-        placed.transform.position = ob.transform.position;
-        placed.gameObject.SetActive(true);
+        Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
+        foreach(var col in hitColliders)
+        {
+            if (col.gameObject.tag == "bench")
+            {
+                GameObject placed = Instantiate(ob) as GameObject;
+
+                placed.transform.position = col.transform.position + new Vector3(0,1f,0) + new Vector3(player.transform.position.x, 0,0);
+
+                placed.gameObject.SetActive(true);
+            }
+        }
+        
+        
+        
     }
     private void DestroyObject()
     {

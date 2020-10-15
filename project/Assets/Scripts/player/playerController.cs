@@ -15,6 +15,12 @@ public class playerController : MonoBehaviour
     [Tooltip("Enable or Disable click to move")]
     private bool ClickToMove;
 
+    [Header("Grid Movement")]
+    [SerializeField]
+    private bool GridMovementEnabled;
+    [SerializeField]
+    private float gridSnap;
+
 
     // Camera settings
     [Header("Camera Settings")]
@@ -79,7 +85,9 @@ public class playerController : MonoBehaviour
     void Update()
     {
         ingredients = teaController.ingredients;
-        if (Input.GetKeyDown(InteractionKeybinding))
+
+
+        if (Input.GetKeyDown(InteractionKeybinding) || Input.GetButtonDown("Fire1"))
         {
             InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
         }
@@ -91,12 +99,12 @@ public class playerController : MonoBehaviour
         {
             InteractionController.ListInventory();
         }
-        if (Input.GetKeyDown(PlaceObjectKeybinding))
+        if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
-            GameObject obToPlace = InteractionController.tealeaves.First();
+            GameObject obToPlace = ingredients.First().gameObject;
             obToPlace.transform.position = meshTransform.position;
+            InteractionController.PlaceObject(MovementController.playerAgent, obToPlace);
             
-            InteractionController.PlaceObject(obToPlace);
         }
         cameraController.UpdateCamera(playerCamera, meshTransform, cameraMoveRange, cameraSpeed);
         ConfigMovementType();
@@ -111,14 +119,16 @@ public class playerController : MonoBehaviour
     }
     void ConfigMovementType()
     {
-        if (ClickToMove == true)
-        {
-            MovementController.PointToMove(playerCamera);
-        }
-        if (ClickToMove == false)
-        {
-            MovementController.ControllerMovement(Time.deltaTime);
-        }
+            if (ClickToMove == true)
+            {
+                MovementController.PointToMove(playerCamera);
+            }
+            if (ClickToMove == false)
+            {
+                MovementController.ControllerMovement(Time.deltaTime);
+            }
+
+
     }
 
 }
