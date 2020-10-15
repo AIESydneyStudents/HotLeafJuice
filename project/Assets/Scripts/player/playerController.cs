@@ -102,9 +102,10 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
 
-            Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.5f);
+            Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.4f);
             foreach (var col in hitColliders)
             {
+                
                 if (col.gameObject.tag == "bench")
                 {
                     GameObject obToPlace = ingredients.First().gameObject;
