@@ -101,9 +101,23 @@ public class playerController : MonoBehaviour
         }
         if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
-            GameObject obToPlace = ingredients.First().gameObject;
-            obToPlace.transform.position = meshTransform.position;
-            InteractionController.PlaceObject(MovementController.playerAgent, obToPlace);
+
+            Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.5f);
+            foreach (var col in hitColliders)
+            {
+                if (col.gameObject.tag == "bench")
+                {
+                    GameObject obToPlace = ingredients.First().gameObject;
+                    GameObject placed = Instantiate(obToPlace) as GameObject;
+
+                    placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
+                    ingredients.Remove(ingredients.First());
+                    placed.gameObject.SetActive(true);
+                }
+            }
+            
+            
+            
 
             
         }

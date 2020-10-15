@@ -61,18 +61,7 @@ public class player_interaction : MonoBehaviour
 
     public void PlaceObject(NavMeshAgent player, GameObject ob)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
-        foreach(var col in hitColliders)
-        {
-            if (col.gameObject.tag == "bench")
-            {
-                GameObject placed = Instantiate(ob) as GameObject;
-
-                placed.transform.position = col.transform.position + new Vector3(0,1f,0) + new Vector3(player.transform.position.x, 0,0);
-
-                placed.gameObject.SetActive(true);
-            }
-        }
+       
         
         
         
