@@ -3164,8 +3164,8 @@ MonoBehaviour:
   gridSnap: 5
   cameraController: {fileID: 2139726757}
   playerCamera: {fileID: 1721121660}
-  cameraMoveRange: 3.66
-  cameraSpeed: 1.75
+  cameraMoveRange: 1.6
+  cameraSpeed: 3.34
   InteractionController: {fileID: 182006158}
   meshTransform: {fileID: 47221119}
   pickupRange: 1.04
