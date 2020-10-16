@@ -89,6 +89,7 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKeyDown(InteractionKeybinding) || Input.GetButtonDown("Fire1"))
         {
+
             InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
         }
         if (Input.GetKeyDown(MenuKeybinding))
@@ -102,18 +103,26 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
 
-            Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.4f);
+            Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.3f);
             foreach (var col in hitColliders)
             {
                 
                 if (col.gameObject.tag == "bench")
                 {
-                    GameObject obToPlace = ingredients.First().gameObject;
-                    GameObject placed = Instantiate(obToPlace) as GameObject;
 
-                    placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
-                    ingredients.Remove(ingredients.First());
-                    placed.gameObject.SetActive(true);
+                    bench bench = col.gameObject.GetComponent<bench>();
+
+                    if (bench.isUsed == false)
+                    {
+                        GameObject obToPlace = ingredients.First().gameObject;
+                        GameObject placed = Instantiate(obToPlace) as GameObject;
+                        
+                        placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
+                        ingredients.Remove(ingredients.First());
+                        placed.gameObject.SetActive(true);
+                        bench.isUsed = true;
+                        bench.ObjectOnBench(placed);
+                    }
                 }
             }
             

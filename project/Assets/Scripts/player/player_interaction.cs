@@ -35,8 +35,9 @@ public class player_interaction : MonoBehaviour
         {
             if (col.gameObject.tag == "tea leaves")
             {
-                tea = col.gameObject;
+                
 
+                tea = col.gameObject;
                 tealeaves.Add(tea);
 
                 ingredients.Add(tea.GetComponent<ingredient>());
@@ -44,6 +45,16 @@ public class player_interaction : MonoBehaviour
 
                 Debug.Log("Object : " + col.gameObject.name.ToUpper() + " : picked up.");
                 col.gameObject.SetActive(false);
+            }
+            if (col.gameObject.tag == "bench")
+            {
+                bench bench = col.gameObject.GetComponent<bench>();
+
+                if (bench.isUsed == true)
+                {
+                    bench.isUsed = false;
+                    
+                }
             }
 
         }
