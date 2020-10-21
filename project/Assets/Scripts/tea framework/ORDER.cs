@@ -7,9 +7,6 @@ using UnityEngine;
 public class ORDER : MonoBehaviour
 {
 
-
-   
-
     private string orderName;
     private int orderScore;
     private bool completed;
