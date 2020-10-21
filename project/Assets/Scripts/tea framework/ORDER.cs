@@ -24,7 +24,7 @@ public class ORDER : MonoBehaviour
 
     }
 
-    private List<Orders> orderList;
+    private List<Orders> orderList = new List<Orders>();
 
 
 
@@ -36,17 +36,20 @@ public class ORDER : MonoBehaviour
 
     private void Start()
     {
-        List<Orders> temp = null;
+        
         foreach(var PleaseLetItEnd in Orders)
         {
             Orders order = new Orders(PleaseLetItEnd.title, PleaseLetItEnd.ingredients);
-            temp.Add(order);
+
+            orderList.Add(order);
+
         }
 
         foreach(var gay in orderList)
         {
-            Debug.Log("ORDER NAME: " + gay.name + " | ORDER SCORE: " + gay.score);
+            Debug.Log(gay.name + " | " + gay.score);
         }
+        
         
     }
 
