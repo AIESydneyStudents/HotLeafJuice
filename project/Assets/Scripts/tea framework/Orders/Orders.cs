@@ -26,7 +26,13 @@ public class Orders
     }
 
 
+    private void ExportJSON()
+    {
 
+    }
 
-   
+    private void LoadJSON()
+    {
+
+    }
 }

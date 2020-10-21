@@ -634,6 +634,11 @@ MonoBehaviour:
     ingredients:
     - {fileID: 24892069}
     isCompleted: 0
+  - title: Black Tea
+    ingredients:
+    - {fileID: 24892069}
+    - {fileID: 24892069}
+    isCompleted: 0
 --- !u!1 &1649089592
 GameObject:
   m_ObjectHideFlags: 0

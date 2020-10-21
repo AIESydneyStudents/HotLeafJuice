@@ -47,10 +47,25 @@ public class ORDER : MonoBehaviour
 
         foreach(var gay in orderList)
         {
-            Debug.Log(gay.name + " | " + gay.score);
+            Debug.Log("_________________");
+            Debug.Log(" | " + gay.name + " | " + gay.score);
+            foreach (var lol in gay.ingredients)
+            {
+                Debug.Log(" | " + lol.name + " | ");
+            }
+            Debug.Log("_________________");
+
         }
         
         
+    }
+
+    private void Update()
+    {
+        foreach(var order in Orders)
+        {
+            completed = order.isCompleted;
+        }
     }
 
 }
