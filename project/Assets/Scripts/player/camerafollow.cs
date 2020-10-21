@@ -8,7 +8,7 @@ public class camerafollow : MonoBehaviour
 
     private Vector3 sidescroll;
     private Vector3 old;
-
+    private float zoffset = -7;
 
 
     public void InitCamera()
@@ -18,12 +18,13 @@ public class camerafollow : MonoBehaviour
 
     public void UpdateCamera(Camera camera, Transform PlayerTransform, float cameraMoveRange, float cameraSpeed)
     {
-
+        
         if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
         {
+            
             sidescroll.x = PlayerTransform.position.x;
             sidescroll.y = camera.transform.position.y;
-            sidescroll.z = camera.transform.position.z;
+            sidescroll.z = PlayerTransform.transform.position.z  + zoffset;
         }
         else
         {
@@ -32,6 +33,8 @@ public class camerafollow : MonoBehaviour
             sidescroll.y = camera.transform.position.y;
             sidescroll.z = camera.transform.position.z;
         }
+
+        
 
         old = camera.transform.position;
         camera.transform.position = Vector3.Lerp(old, sidescroll, cameraSpeed * Time.deltaTime);
