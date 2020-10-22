@@ -20,5 +20,6 @@ public class bench : MonoBehaviour
     public void Pickedup(GameObject @object)
     {
         objects.Remove(@object);
+
     }
 }
