@@ -832,7 +832,7 @@ PrefabInstance:
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
@@ -1002,7 +1002,7 @@ PrefabInstance:
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 40
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
@@ -1080,6 +1080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4b4c12c15693e459f45ce017530601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+  timerTime: 0
   Orders: []
 --- !u!4 &245079389
 Transform:
@@ -1630,6 +1632,7 @@ MonoBehaviour:
   InteractionController: {fileID: 426879707}
   meshTransform: {fileID: 1333125095}
   pickupRange: 1.11
+  inventorySizeLimit: 0
   InteractionKeybinding: 101
   MenuKeybinding: 27
   InventoryKeybinding: 32
@@ -2058,8 +2061,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd5e66e3eeca004ea60b87cebaae536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limit: 0
+  inventorySize: 0
   tealeaves:
   - {fileID: 0}
+  full: 0
 --- !u!4 &426879708
 Transform:
   m_ObjectHideFlags: 0
@@ -3717,6 +3723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afb1d1015466d748a437b3b5bb4b7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraStop: {fileID: 1049716478}
 --- !u!4 &950584246
 Transform:
   m_ObjectHideFlags: 0
@@ -4111,6 +4118,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1040758333}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1049716477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049716479}
+  - component: {fileID: 1049716478}
+  m_Layer: 0
+  m_Name: CameraStop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1049716478
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049716477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1049716479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049716477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.66, y: 4.6785483, z: -5.181546}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1054990933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5322,7 +5374,7 @@ PrefabInstance:
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
@@ -7557,7 +7609,7 @@ PrefabInstance:
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
         type: 3}
