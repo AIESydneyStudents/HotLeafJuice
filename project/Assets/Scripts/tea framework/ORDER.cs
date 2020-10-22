@@ -4,13 +4,18 @@ using UnityEngine;
 
 
 
+
 public class ORDER : MonoBehaviour
 {
-
+    [SerializeField] UnityEngine.UI.Slider slider;
+    [SerializeField] float timerTime;
     private string orderName;
     private int orderScore;
     private bool completed;
+     private Timer timer;
     [SerializeField] List<npcOrders> Orders;
+    
+    
 
     [System.Serializable]
     struct npcOrders
@@ -18,6 +23,7 @@ public class ORDER : MonoBehaviour
         public string title;
         public List<ingredient> ingredients;
         public bool isCompleted;
+        public float orderTimer;
 
     }
 
@@ -35,7 +41,7 @@ public class ORDER : MonoBehaviour
     {
         foreach (var PleaseLetItEnd in Orders)
         {
-            Orders order = new Orders(PleaseLetItEnd.title, PleaseLetItEnd.ingredients);
+            Orders order = new Orders(PleaseLetItEnd.title, PleaseLetItEnd.ingredients, PleaseLetItEnd.orderTimer);
             orderList.Add(order);
         }
 
@@ -44,14 +50,36 @@ public class ORDER : MonoBehaviour
             Debug.Log(ord.name + " | " + ord.score);
             
         }
+
+        timer = new Timer(timerTime);
+    }
+
+
+    private void DisplayUpdate(float time)
+    {
+        slider.value = time;
+        if (slider.value <= 30)
+        {
+            
+        }
+        if (slider.value <= 10)
+        {
+            slider.image.color = Color.red;
+        }
     }
 
     private void Update()
     {
-        foreach(var order in Orders)
+
+        
+
+        DisplayUpdate(timer.Update());
+
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            completed = order.isCompleted;
+            timer.StopTimer();
         }
+
     }
 
 }

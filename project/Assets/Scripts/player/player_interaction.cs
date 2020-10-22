@@ -13,7 +13,7 @@ public class player_interaction : MonoBehaviour
     public List<GameObject> tealeaves;
 
     private TeaController teacontroller;
-
+    [SerializeField] bool full;
     // Getters and Setters
     public void setRadius(float _radius)
     {
@@ -33,7 +33,7 @@ public class player_interaction : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
         foreach (var col in hitColliders)
         {
-            if (col.gameObject.tag == "tea leaves")
+            if (col.gameObject.tag == "tea leaves" && full == false)
             {
                 
 
