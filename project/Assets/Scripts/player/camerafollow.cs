@@ -9,15 +9,19 @@ public class camerafollow : MonoBehaviour
     private Vector3 sidescroll;
     private Vector3 old;
     private float zoffset = -7;
-
+    [SerializeField] private Collider cameraStop;
 
     public void InitCamera()
     {
         sidescroll = transform.position;
     }
 
+    
+    
+
     public void UpdateCamera(Camera camera, Transform PlayerTransform, float cameraMoveRange, float cameraSpeed)
     {
+
         
         if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
         {
@@ -34,7 +38,13 @@ public class camerafollow : MonoBehaviour
             sidescroll.z = camera.transform.position.z;
         }
 
-        
+        if (PlayerTransform.position.x <= cameraStop.gameObject.transform.position.x)
+        {
+            camera.transform.position = Vector3.Lerp(old, 
+                new Vector3(cameraStop.gameObject.transform.position.x,
+                camera.transform.position.y, PlayerTransform.transform.position.z + zoffset),
+                cameraSpeed * Time.deltaTime);
+        }
 
         old = camera.transform.position;
         camera.transform.position = Vector3.Lerp(old, sidescroll, cameraSpeed * Time.deltaTime);

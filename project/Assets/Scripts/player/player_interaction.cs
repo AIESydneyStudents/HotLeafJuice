@@ -9,6 +9,10 @@ public class player_interaction : MonoBehaviour
 {
     // Class properties
     private float radius;
+
+    [SerializeField] private int limit;
+
+    public int inventorySize;
     List<ingredient> ingredients;
     public List<GameObject> tealeaves;
 
@@ -29,14 +33,14 @@ public class player_interaction : MonoBehaviour
     // Methods and functions
     public void PickupObject(NavMeshAgent player, List<ingredient> ingredients)
     {
+        
         GameObject tea;
         Collider[] hitColliders = Physics.OverlapSphere(player.gameObject.transform.position, radius);
         foreach (var col in hitColliders)
         {
-            if (col.gameObject.tag == "tea leaves" && full == false)
+            if (col.gameObject.tag == "tea leaves" && inventorySize < limit)
             {
-                
-
+                inventorySize++;
                 tea = col.gameObject;
                 tealeaves.Add(tea);
 

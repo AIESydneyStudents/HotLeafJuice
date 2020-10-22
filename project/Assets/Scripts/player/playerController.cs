@@ -49,6 +49,9 @@ public class playerController : MonoBehaviour
     [Range(0f,5f)] 
     public float pickupRange;
     [SerializeField]
+    [Tooltip("Max limit of inventory")]
+    private float inventorySizeLimit;
+    [SerializeField]
     [Tooltip("Keybinding for interacting with objects")]
     private KeyCode InteractionKeybinding;
     [SerializeField]
@@ -116,7 +119,7 @@ public class playerController : MonoBehaviour
                     {
                         GameObject obToPlace = ingredients.First().gameObject;
                         GameObject placed = Instantiate(obToPlace) as GameObject;
-                        
+                        InteractionController.inventorySize--;
                         placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
                         ingredients.Remove(ingredients.First());
                         placed.gameObject.SetActive(true);

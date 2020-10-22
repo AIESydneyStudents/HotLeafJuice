@@ -12,7 +12,7 @@ public class ORDER : MonoBehaviour
     private string orderName;
     private int orderScore;
     private bool completed;
-     private Timer timer;
+    private Timer timer;
     [SerializeField] List<npcOrders> Orders;
     
     
@@ -73,12 +73,6 @@ public class ORDER : MonoBehaviour
 
         
 
-        DisplayUpdate(timer.Update());
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            timer.StopTimer();
-        }
 
     }
 
