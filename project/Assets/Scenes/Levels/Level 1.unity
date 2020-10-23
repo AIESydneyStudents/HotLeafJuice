@@ -6373,7 +6373,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afb1d1015466d748a437b3b5bb4b7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoffset: -7
   cameraStop: {fileID: 1587573448}
+  xAxis: 1
+  YAxis: 1
 --- !u!4 &2041590064
 Transform:
   m_ObjectHideFlags: 0
