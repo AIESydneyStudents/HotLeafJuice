@@ -3727,6 +3727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoffset: -12
   cameraStop: {fileID: 1049716478}
+  xAxis: 1
+  YAxis: 1
 --- !u!4 &950584246
 Transform:
   m_ObjectHideFlags: 0
