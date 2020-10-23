@@ -104,6 +104,8 @@ public class playerController : MonoBehaviour
         {
 
             InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
+
+           
         }
         if (Input.GetKeyDown(MenuKeybinding))
         {
@@ -129,6 +131,7 @@ public class playerController : MonoBehaviour
                     {
                         GameObject obToPlace = ingredients.First().gameObject;
                         GameObject placed = Instantiate(obToPlace) as GameObject;
+
                         InteractionController.inventorySize--;
                         placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
                         ingredients.Remove(ingredients.First());

@@ -10,6 +10,8 @@ public class camerafollow : MonoBehaviour
     private Vector3 old;
     [SerializeField] private float zoffset = -7;
     [SerializeField] private Collider cameraStop;
+    [SerializeField] private bool xAxis;
+    [SerializeField] private bool YAxis;
 
     public void InitCamera()
     {
@@ -22,33 +24,106 @@ public class camerafollow : MonoBehaviour
     public void UpdateCamera(Camera camera, Transform PlayerTransform, float cameraMoveRange, float cameraSpeed)
     {
 
-        
-        if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
+        if (YAxis == true && xAxis == true)
         {
-            
-            sidescroll.x = PlayerTransform.position.x;
-            sidescroll.y = camera.transform.position.y;
-            sidescroll.z = PlayerTransform.transform.position.z  + zoffset;
-        }
-        else
-        {
-            cameraSpeed = 1f;
-            sidescroll.x = 0;
-            sidescroll.y = camera.transform.position.y;
-            sidescroll.z = camera.transform.position.z;
+
+            if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
+            {
+
+                sidescroll.x = PlayerTransform.position.x;
+                sidescroll.y = camera.transform.position.y;              
+                sidescroll.z = PlayerTransform.transform.position.z + zoffset;
+                
+            }
+            else
+            {
+                cameraSpeed = 1f;
+                sidescroll.x = 0;
+                sidescroll.y = camera.transform.position.y;
+                sidescroll.z = camera.transform.position.z;
+            }
+
+
+            if (PlayerTransform.position.x <= cameraStop.gameObject.transform.position.x)
+            {
+                camera.transform.position = Vector3.Lerp(old,
+                    new Vector3(cameraStop.gameObject.transform.position.x,
+                    camera.transform.position.y, PlayerTransform.transform.position.z + zoffset),
+                    cameraSpeed * Time.deltaTime);
+            }
+
+            old = camera.transform.position;
+            camera.transform.position = Vector3.Lerp(old, sidescroll, cameraSpeed * Time.deltaTime);
+
         }
 
-        if (PlayerTransform.position.x <= cameraStop.gameObject.transform.position.x)
+        if (xAxis == true)
         {
-            camera.transform.position = Vector3.Lerp(old, 
-                new Vector3(cameraStop.gameObject.transform.position.x,
-                camera.transform.position.y, PlayerTransform.transform.position.z + zoffset),
-                cameraSpeed * Time.deltaTime);
+            if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
+            {
+
+                sidescroll.x = PlayerTransform.position.x;
+                sidescroll.y = camera.transform.position.y;
+                sidescroll.z = camera.transform.position.z;
+
+            }
+            else
+            {
+                cameraSpeed = 1f;
+                sidescroll.x = 0;
+                sidescroll.y = camera.transform.position.y;
+                sidescroll.z = camera.transform.position.z;
+            }
+
+
+            if (PlayerTransform.position.x <= cameraStop.gameObject.transform.position.x)
+            {
+                camera.transform.position = Vector3.Lerp(old,
+                    new Vector3(cameraStop.gameObject.transform.position.x,
+                    camera.transform.position.y, PlayerTransform.transform.position.z + zoffset),
+                    cameraSpeed * Time.deltaTime);
+            }
+
+            old = camera.transform.position;
+            camera.transform.position = Vector3.Lerp(old, sidescroll, cameraSpeed * Time.deltaTime);
         }
+       
+        if (YAxis == true)
+        {
+            if (PlayerTransform.position.x <= -cameraMoveRange || PlayerTransform.position.x >= cameraMoveRange)
+            {
 
-        old = camera.transform.position;
-        camera.transform.position = Vector3.Lerp(old, sidescroll, cameraSpeed * Time.deltaTime);
+                sidescroll.x = camera.transform.position.x;
+                sidescroll.y = camera.transform.position.y;
+                sidescroll.z = PlayerTransform.transform.position.z + zoffset;
 
+            }
+            else
+            {
+                cameraSpeed = 1f;
+                sidescroll.x = 0;
+                sidescroll.y = camera.transform.position.y;
+                sidescroll.z = camera.transform.position.z;
+            }
+
+
+            if (PlayerTransform.position.x <= cameraStop.gameObject.transform.position.x)
+            {
+                camera.transform.position = Vector3.Lerp(old,
+                    new Vector3(cameraStop.gameObject.transform.position.x,
+                    camera.transform.position.y, PlayerTransform.transform.position.z + zoffset),
+                    cameraSpeed * Time.deltaTime);
+            }
+
+            old = camera.transform.position;
+            camera.transform.position = Vector3.Lerp(old, sidescroll, cameraSpeed * Time.deltaTime);
+
+
+        }
 
     }
+
+
+
+
 }

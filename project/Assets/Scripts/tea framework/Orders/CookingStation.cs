@@ -13,7 +13,7 @@ public class CookingStation : MonoBehaviour
     private float totalScore = 0;
 
     public TextMeshProUGUI Ordertext;
-    //public TextMeshProUGUI stateText;
+    public TextMeshProUGUI stateText;
     public void CheckOrder()
     {
 
@@ -43,7 +43,6 @@ public class CookingStation : MonoBehaviour
             }
         }
 
-       // Ordertext.text = ListToText(orderMessage);
 
     }
 
@@ -58,14 +57,11 @@ public class CookingStation : MonoBehaviour
                 {
                     totalScore += check.score;
                     Debug.Log("Correct");
-                   // stateText.text = "Correct Ingredient";
+                    stateText.text = "Correct";
                     Ordertext.text += " \n" + " > " + ingred.name + "\n";
+                    return;
                 }
-                if (ingredient != ingred)
-                {
-                  //  stateText.text = "Incorrect Ingredient";
-                }
-                
+                stateText.text = "Incorrect";                              
             }
         }
 
