@@ -1639,6 +1639,8 @@ MonoBehaviour:
   PlaceObjectKeybinding: 118
   teaController: {fileID: 245079387}
   ingredients: []
+  cookingStationController: {fileID: 0}
+  ORDER: {fileID: 0}
 --- !u!4 &333264140
 Transform:
   m_ObjectHideFlags: 0
@@ -1898,7 +1900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384169460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.109, z: -3.74}
+  m_LocalPosition: {x: 0, y: 0.19, z: -3.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1685099223}
@@ -3723,6 +3725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afb1d1015466d748a437b3b5bb4b7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoffset: -12
   cameraStop: {fileID: 1049716478}
 --- !u!4 &950584246
 Transform:

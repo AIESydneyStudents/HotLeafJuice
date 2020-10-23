@@ -8,6 +8,11 @@ using UnityEngine.AI;
 public class player_interaction : MonoBehaviour
 {
     // Class properties
+    [Header("Testing UI (Programming Debugging)")]
+    [SerializeField] public TMPro.TextMeshProUGUI inventoryText;
+
+    [Header("Main settings")]
+
     private float radius;
 
     [SerializeField] private int limit;
@@ -45,10 +50,16 @@ public class player_interaction : MonoBehaviour
                 tealeaves.Add(tea);
 
                 ingredients.Add(tea.GetComponent<ingredient>());
-
-
-                Debug.Log("Object : " + col.gameObject.name.ToUpper() + " : picked up.");
+                        
+               // Debug.Log("Object : " + col.gameObject.name.ToUpper() + " : picked up.");
                 col.gameObject.SetActive(false);
+
+                foreach(var test in ingredients)
+                {
+                    inventoryText.text += test.name + "\n";
+                }
+
+
             }
             if (col.gameObject.tag == "bench")
             {
@@ -69,7 +80,7 @@ public class player_interaction : MonoBehaviour
         Debug.Log("LIST OF CURRENT OBJECTS IN LEAF INVENTORY");
         foreach(var leaves in tealeaves)
         {
-            Debug.Log("Object : " + leaves.name.ToUpper());           
+          //  Debug.Log("Object : " + leaves.name.ToUpper());           
         }
     }
    

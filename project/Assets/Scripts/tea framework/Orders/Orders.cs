@@ -28,7 +28,6 @@ public class Timer
             else
             {
                 return timeRemaining = 0;
-                isRunning = false;
             }
         }
         return 0;
