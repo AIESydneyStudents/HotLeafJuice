@@ -8,7 +8,7 @@ public class camerafollow : MonoBehaviour
 
     private Vector3 sidescroll;
     private Vector3 old;
-    private float zoffset = -7;
+    [SerializeField] private float zoffset = -7;
     [SerializeField] private Collider cameraStop;
 
     public void InitCamera()

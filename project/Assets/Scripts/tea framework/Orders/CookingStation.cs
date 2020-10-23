@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CookingStation : MonoBehaviour
 {
@@ -11,19 +12,39 @@ public class CookingStation : MonoBehaviour
     private List<Orders> cookingList;
     private float totalScore = 0;
 
-    public void Init(List<ingredient> player)
-    {
-
-    }
-
+    public TextMeshProUGUI Ordertext;
+    //public TextMeshProUGUI stateText;
     public void CheckOrder()
     {
 
     }
 
+    private string ListToText(List<string> text)
+    {
+        string result = " ";
+        foreach(var str in text)
+        {
+            result += str.ToString() + "\n";
+
+        }
+        return result;
+    }
+
     public void loadOrder(List<Orders> orders)
     {
+        List<string> orderMessage = new List<string>();
+        
         ordersList = orders;
+        foreach (var order in ordersList)
+        {
+            foreach (var ingred in order.ingredients)
+            {
+                orderMessage.Add(" - " + ingred.name);
+            }
+        }
+
+       // Ordertext.text = ListToText(orderMessage);
+
     }
 
 
@@ -37,6 +58,12 @@ public class CookingStation : MonoBehaviour
                 {
                     totalScore += check.score;
                     Debug.Log("Correct");
+                   // stateText.text = "Correct Ingredient";
+                    Ordertext.text += " \n" + " > " + ingred.name + "\n";
+                }
+                if (ingredient != ingred)
+                {
+                  //  stateText.text = "Incorrect Ingredient";
                 }
                 
             }
