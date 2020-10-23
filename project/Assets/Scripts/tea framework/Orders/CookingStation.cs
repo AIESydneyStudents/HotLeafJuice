@@ -32,7 +32,7 @@ public class CookingStation : MonoBehaviour
        // Do UI stuff to display order here
        
         ordersList = orders;
-        
+
     }
 
 
