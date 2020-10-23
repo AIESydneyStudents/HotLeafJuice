@@ -15,4 +15,9 @@ public void PlayGame()
         Debug.Log("Quit!");
         Application.Quit();
     }
+
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
