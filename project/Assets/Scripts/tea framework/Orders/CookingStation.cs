@@ -14,12 +14,9 @@ public class CookingStation : MonoBehaviour
 
     public TextMeshProUGUI Ordertext;
     public TextMeshProUGUI stateText;
-    public void CheckOrder()
-    {
+    
 
-    }
-
-    private string ListToText(List<string> text)
+    private  string ListToText(List<string> text)
     {
         string result = " ";
         foreach(var str in text)
@@ -32,22 +29,15 @@ public class CookingStation : MonoBehaviour
 
     public void loadOrder(List<Orders> orders)
     {
-        List<string> orderMessage = new List<string>();
-        
+       // Do UI stuff to display order here
+       
         ordersList = orders;
-        foreach (var order in ordersList)
-        {
-            foreach (var ingred in order.ingredients)
-            {
-                orderMessage.Add(" - " + ingred.name);
-            }
-        }
-
-
+        
     }
 
 
-    public void AcceptIngredient(ingredient ingredient)
+
+    public bool AcceptIngredient(ingredient ingredient)
     {
         foreach(var check in ordersList)
         {
@@ -55,19 +45,18 @@ public class CookingStation : MonoBehaviour
             {
                 if (ingredient == ingred)
                 {
-                    totalScore += check.score;
-                    Debug.Log("Correct");
+                   // Debug.Log("Correct");
                     stateText.text = "Correct";
                     Ordertext.text += " \n" + " > " + ingred.name + "\n";
-                    return;
+                    return true;
                 }
-                stateText.text = "Incorrect";                              
+                
             }
         }
+        return false;
 
-
-        Debug.Log(totalScore);
-
+       
+        
     }
 
 

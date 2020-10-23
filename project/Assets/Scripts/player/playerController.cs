@@ -68,16 +68,17 @@ public class playerController : MonoBehaviour
     [Header("Tea Framework")]
     [SerializeField]
     private TeaController teaController;
-
     [SerializeField]
     [Tooltip("Player Ingredients")]
     private List<ingredient> ingredients;
-
     [SerializeField]
     private CookingStation cookingStationController;
-
     [SerializeField]
     private ORDER ORDER;
+
+
+    // Testing UI
+    
 
 
     // Start is called before the first frame update
@@ -104,7 +105,8 @@ public class playerController : MonoBehaviour
         {
 
             InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
-
+            
+            
            
         }
         if (Input.GetKeyDown(MenuKeybinding))
@@ -131,22 +133,34 @@ public class playerController : MonoBehaviour
                     {
                         GameObject obToPlace = ingredients.First().gameObject;
                         GameObject placed = Instantiate(obToPlace) as GameObject;
-
+                        InteractionController.inventoryText.text = " ";
                         InteractionController.inventorySize--;
                         placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
                         ingredients.Remove(ingredients.First());
                         placed.gameObject.SetActive(true);
                         bench.isUsed = true;
                         bench.ObjectOnBench(placed);
+                        
                     }
                 }
 
                 if (col.gameObject.tag == "Cooking Station")
                 {
-                    InteractionController.inventorySize--;
+                    
 
-                    cookingStationController.AcceptIngredient(ingredients.First());
-                    ingredients.Remove(ingredients.First());
+                    if(cookingStationController.AcceptIngredient(ingredients.First()) == true)
+                    {
+                        InteractionController.inventoryText.text = " ";
+
+                        InteractionController.inventorySize--;
+                        ingredients.Remove(ingredients.First());
+
+                    }
+                    else
+                    {
+                        cookingStationController.stateText.text = "Cannot place that ingredient";
+                    }
+                    
                 }
             }
             
