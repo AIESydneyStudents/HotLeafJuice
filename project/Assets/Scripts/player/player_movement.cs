@@ -19,11 +19,11 @@ public class player_movement : MonoBehaviour
         {
             RaycastHit hit;
 
-           
-
             if (Physics.Raycast(playerCamera.ScreenPointToRay(Input.mousePosition), out hit, 100))
             {
+
                 playerAgent.destination = hit.point;
+            
             }
         }
     }  

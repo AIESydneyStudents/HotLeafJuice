@@ -73,16 +73,26 @@ public class playerController : MonoBehaviour
     [Tooltip("Player Ingredients")]
     private List<ingredient> ingredients;
 
+    [SerializeField]
+    private CookingStation cookingStationController;
+
+    [SerializeField]
+    private ORDER ORDER;
+
 
     // Start is called before the first frame update
     void Start()
     {
         MovementController.playerAgent.speed = movementSpeed;
         ConfigInteractionController();
-        cameraController.InitCamera();
+        cameraController.InitCamera();       
+        StartLevel();
     }
 
-
+    void StartLevel()
+    {
+        cookingStationController.loadOrder(ORDER.orderList);
+    }
     
     // Update is called once per frame
     void Update()
@@ -126,6 +136,14 @@ public class playerController : MonoBehaviour
                         bench.isUsed = true;
                         bench.ObjectOnBench(placed);
                     }
+                }
+
+                if (col.gameObject.tag == "Cooking Station")
+                {
+                    InteractionController.inventorySize--;
+
+                    cookingStationController.AcceptIngredient(ingredients.First());
+                    ingredients.Remove(ingredients.First());
                 }
             }
             

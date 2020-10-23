@@ -27,7 +27,7 @@ public class ORDER : MonoBehaviour
 
     }
 
-    private List<Orders> orderList = new List<Orders>();
+    public List<Orders> orderList = new List<Orders>();
 
 
 
@@ -68,13 +68,7 @@ public class ORDER : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-        
-
-
-    }
+    
 
 }
 

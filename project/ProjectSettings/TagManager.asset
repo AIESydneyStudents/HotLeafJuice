@@ -7,6 +7,7 @@ TagManager:
   - interaction
   - tea leaves
   - bench
+  - Cooking Station
   layers:
   - Default
   - TransparentFX
