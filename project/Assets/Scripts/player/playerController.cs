@@ -103,7 +103,8 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKeyDown(InteractionKeybinding) || Input.GetButtonDown("Fire1"))
         {
-
+            InteractionController.inventoryText.text = " ";
+            cookingStationController.Ordertext.text = " ";
             InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
             
             
@@ -171,12 +172,12 @@ public class playerController : MonoBehaviour
                 if (col.gameObject.tag == "bin")
                 {
                     disposeObjects bin = col.GetComponent<disposeObjects>();
-                    InteractionController.inventoryText.text = " Object " + ingredients.First().name + " thrown down sink ";
-
+                    InteractionController.inventoryText.text = " Object ''" + ingredients.First().name + "'' thrown down sink ";
+                    InteractionController.inventorySize--;
                     bin.bin(ingredients.First());
                     ingredients.Remove(ingredients.First());
 
-                    InteractionController.inventorySize--;
+                    
 
 
                 }

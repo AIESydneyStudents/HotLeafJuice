@@ -43,7 +43,7 @@ public class CookingStation : MonoBehaviour
         {
             foreach (var ingred in check.ingredients)
             {
-                if (ingredient.GetName() == ingred.GetName())
+                if (ingredient.name == ingred.name)
                 {
                    // Debug.Log("Correct");
                     stateText.text = "Correct";

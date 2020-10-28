@@ -8,12 +8,7 @@ public class TeaController: MonoBehaviour
     public List<ingredient> ingredients;
 
    
-    void Start()
-    {
-
-
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

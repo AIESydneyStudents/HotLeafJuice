@@ -33,8 +33,6 @@ public class player_interaction : MonoBehaviour
         return radius;
     }
 
-
-
     // Methods and functions
     public void PickupObject(NavMeshAgent player, List<ingredient> ingredients)
     {
@@ -72,11 +70,7 @@ public class player_interaction : MonoBehaviour
                 }
             }
 
-            if (col.gameObject.tag == "bin")
-            {
-                disposeObjects bin = col.gameObject.GetComponent<disposeObjects>();
-
-            }
+           
 
         }
     }
