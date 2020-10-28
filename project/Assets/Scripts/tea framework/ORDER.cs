@@ -47,7 +47,7 @@ public class ORDER : MonoBehaviour
 
         foreach (var ord in orderList)
         {
-            Debug.Log(ord.name + " | " + ord.score);
+            Debug.Log(ord + " | " + ord.score);
             
         }
 

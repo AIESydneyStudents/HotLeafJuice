@@ -119,6 +119,8 @@ public class playerController : MonoBehaviour
         }
         if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
+            InteractionController.inventoryText.text = " ";
+            cookingStationController.Ordertext.text = " ";
 
             Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.3f);
             foreach (var col in hitColliders)
@@ -135,7 +137,9 @@ public class playerController : MonoBehaviour
                         GameObject placed = Instantiate(obToPlace) as GameObject;
                         placed.name = ingredients.First().gameObject.name;
                         InteractionController.inventoryText.text = " ";
+
                         InteractionController.inventorySize--;
+
                         placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);
                         ingredients.Remove(ingredients.First());
                         placed.gameObject.SetActive(true);
@@ -162,6 +166,19 @@ public class playerController : MonoBehaviour
                         cookingStationController.stateText.text = "Cannot place that ingredient";
                     }
                     
+                }
+
+                if (col.gameObject.tag == "bin")
+                {
+                    disposeObjects bin = col.GetComponent<disposeObjects>();
+                    InteractionController.inventoryText.text = " Object " + ingredients.First().name + " thrown down sink ";
+
+                    bin.bin(ingredients.First());
+                    ingredients.Remove(ingredients.First());
+
+                    InteractionController.inventorySize--;
+
+
                 }
             }
 

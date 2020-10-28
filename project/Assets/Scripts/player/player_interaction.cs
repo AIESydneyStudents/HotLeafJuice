@@ -56,7 +56,7 @@ public class player_interaction : MonoBehaviour
 
                 foreach(var test in ingredients)
                 {
-                    inventoryText.text += test.name + "\n";
+                    inventoryText.text += test.name ;
                 }
 
 
@@ -70,6 +70,12 @@ public class player_interaction : MonoBehaviour
                     bench.isUsed = false;
                     
                 }
+            }
+
+            if (col.gameObject.tag == "bin")
+            {
+                disposeObjects bin = col.gameObject.GetComponent<disposeObjects>();
+
             }
 
         }
