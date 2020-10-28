@@ -6,7 +6,7 @@ public class japanese : ingredient
 {
     japanese()
     {
-        name = "Japanese Tea Leaves";
+        Objectname = "Japanese Tea Leaves";
         scoreNumber = 11;
 
     }

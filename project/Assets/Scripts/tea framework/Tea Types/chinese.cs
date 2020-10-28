@@ -7,7 +7,7 @@ public class chinese : ingredient
     // Start is called before the first frame update
     chinese()
     {
-        name = "Chinese Tea Leaves";
+        Objectname = "Chinese Tea Leaves";
         scoreNumber = 11;
     }
 }

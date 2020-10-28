@@ -6,17 +6,17 @@ using UnityEngine.SocialPlatforms.Impl;
 public class ingredient : MonoBehaviour
 {
 
-    protected string name;
+    public string Objectname;
     protected int scoreNumber;
 
     public void SetName(string _name)
     {
-        name = _name;
+        Objectname = _name;
     }
 
     public string GetName()
     {
-        return name;
+        return Objectname;
     }
 
     public void SetScoreNumber(int score)

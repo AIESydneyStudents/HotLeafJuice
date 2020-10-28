@@ -7,7 +7,7 @@ public class indian : ingredient
     // Start is called before the first frame update
     indian()
     {
-        name = "Indian Tea";
+        Objectname = "Indian Tea";
         scoreNumber = 11;
     }
 }

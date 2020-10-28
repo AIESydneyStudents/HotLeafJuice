@@ -6,7 +6,7 @@ public class earlgrey : ingredient
 {
     earlgrey()
     {
-        name = "Earl Grey Tea";
+        Objectname = "Earl Grey Tea";
         scoreNumber = 10;
     }
    

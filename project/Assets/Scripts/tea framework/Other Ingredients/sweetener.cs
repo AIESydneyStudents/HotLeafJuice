@@ -6,7 +6,7 @@ public class sweetener : ingredient
 {
     sweetener()
     {
-        name = "Artifical Sweetener";
+        Objectname = "Artifical Sweetener";
         scoreNumber = 5;
     }
 }

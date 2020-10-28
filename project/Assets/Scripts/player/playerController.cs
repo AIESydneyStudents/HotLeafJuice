@@ -133,6 +133,7 @@ public class playerController : MonoBehaviour
                     {
                         GameObject obToPlace = ingredients.First().gameObject;
                         GameObject placed = Instantiate(obToPlace) as GameObject;
+                        placed.name = ingredients.First().gameObject.name;
                         InteractionController.inventoryText.text = " ";
                         InteractionController.inventorySize--;
                         placed.transform.position = col.transform.position + new Vector3(0, 1f, 0);

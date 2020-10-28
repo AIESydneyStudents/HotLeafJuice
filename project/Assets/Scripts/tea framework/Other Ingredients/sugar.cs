@@ -6,7 +6,7 @@ public class sugar : ingredient
 {
     sugar()
     {
-        name = "Raw sugar";
+        Objectname = "Raw sugar";
         scoreNumber = 5;
 
     }

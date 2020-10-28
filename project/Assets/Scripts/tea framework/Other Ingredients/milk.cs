@@ -6,7 +6,7 @@ public class milk : ingredient
 {
     milk()
     {
-        name = "full cream milk";
+        Objectname = "full cream milk";
         scoreNumber = 6;
     }
 }

@@ -7,7 +7,7 @@ public class greentea : ingredient
 {
     greentea()
     {
-        name = "Green Tea Leaves";
+        Objectname = "Green Tea Leaves";
         scoreNumber = 10;
     }
     
