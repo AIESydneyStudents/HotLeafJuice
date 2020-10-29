@@ -8,6 +8,7 @@ TagManager:
   - tea leaves
   - bench
   - Cooking Station
+  - bin
   layers:
   - Default
   - TransparentFX

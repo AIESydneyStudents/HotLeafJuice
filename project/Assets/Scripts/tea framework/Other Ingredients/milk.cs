@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Milk Scriptable Object class
+/// </summary>
 public class milk : ingredient
 {
     milk()

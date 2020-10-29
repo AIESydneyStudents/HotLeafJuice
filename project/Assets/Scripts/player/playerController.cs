@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+
+    // Serialised fields for editor access
+    #region
     // Movement settings
     [Header("Movement Settings")]
     [SerializeField] 
@@ -20,7 +23,7 @@ public class playerController : MonoBehaviour
     private bool GridMovementEnabled;
     [SerializeField]
     private float gridSnap;
-
+   
 
     // Camera settings
     [Header("Camera Settings")]
@@ -38,6 +41,7 @@ public class playerController : MonoBehaviour
     [Range(1, 10)]
     public float cameraSpeed;
 
+    
     // Interaction Settings
     [Header("Interaction Settings")]
     [SerializeField]
@@ -63,6 +67,7 @@ public class playerController : MonoBehaviour
     [SerializeField]
     [Tooltip("Place Object KeyBinding")]
     private KeyCode PlaceObjectKeybinding;
+ 
 
     // Tea Framework
     [Header("Tea Framework")]
@@ -75,13 +80,8 @@ public class playerController : MonoBehaviour
     private CookingStation cookingStationController;
     [SerializeField]
     private ORDER ORDER;
-
-
-    // Testing UI
-    
-
-
-    // Start is called before the first frame update
+    #endregion
+   
     void Start()
     {
         MovementController.playerAgent.speed = movementSpeed;
@@ -93,37 +93,42 @@ public class playerController : MonoBehaviour
     void StartLevel()
     {
         cookingStationController.loadOrder(ORDER.orderList);
-    }
-    
+    }  
+
     // Update is called once per frame
     void Update()
     {
         ingredients = teaController.ingredients;
 
-
+        // Pick up objects
         if (Input.GetKeyDown(InteractionKeybinding) || Input.GetButtonDown("Fire1"))
         {
             InteractionController.inventoryText.text = " ";
+
             cookingStationController.Ordertext.text = " ";
-            InteractionController.PickupObject(MovementController.playerAgent, teaController.ingredients);
-            
-            
-           
+
+            InteractionController.PickupObject(
+                MovementController.playerAgent,
+                teaController.ingredients );
+                        
+        
         }
+        // Show menu
         if (Input.GetKeyDown(MenuKeybinding))
         {
             Debug.Log("Not yet implemented");
         }
-        if (Input.GetKeyDown(InventoryKeybinding))
-        {
-            InteractionController.ListInventory();
-        }
+        // Place objects down
         if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
             InteractionController.inventoryText.text = " ";
             cookingStationController.Ordertext.text = " ";
 
-            Collider[] hitColliders = Physics.OverlapSphere(MovementController.playerAgent.gameObject.transform.position, 0.3f);
+            Collider[] hitColliders = Physics.OverlapSphere(
+
+                MovementController.playerAgent.gameObject.transform.position, 
+                0.3f);
+
             foreach (var col in hitColliders)
             {
                 
@@ -185,17 +190,25 @@ public class playerController : MonoBehaviour
 
             
         }
-        cameraController.UpdateCamera(playerCamera, meshTransform, cameraMoveRange, cameraSpeed);
+
+        // Update Camera position
+        cameraController.UpdateCamera(
+            playerCamera, meshTransform,
+            cameraMoveRange, cameraSpeed);
+
+        // Update movement
         ConfigMovementType();
 
 
     }
 
+    // Change pickup radius of the interaction controller
     void ConfigInteractionController()
     {
         InteractionController.setRadius(pickupRange);
 
     }
+
     void ConfigMovementType()
     {
             if (ClickToMove == true)
@@ -209,5 +222,6 @@ public class playerController : MonoBehaviour
 
 
     }
+
 
 }

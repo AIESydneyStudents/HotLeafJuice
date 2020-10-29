@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class camerafollow : MonoBehaviour
 {
-
+    // Class properties 
+    #region
     private Vector3 sidescroll;
     private Vector3 old;
     [SerializeField] private float zoffset = -7;
     [SerializeField] private Collider cameraStop;
     [SerializeField] private bool xAxis;
     [SerializeField] private bool YAxis;
+    #endregion
 
+    // Init the properties of the camera controller
     public void InitCamera()
     {
         sidescroll = transform.position;
     }
 
-    
-    
-
+    // Update camera position
     public void UpdateCamera(Camera camera, Transform PlayerTransform, float cameraMoveRange, float cameraSpeed)
     {
 
@@ -122,8 +123,5 @@ public class camerafollow : MonoBehaviour
         }
 
     }
-
-
-
 
 }

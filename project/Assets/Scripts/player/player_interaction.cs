@@ -7,6 +7,8 @@ using UnityEngine.AI;
 
 public class player_interaction : MonoBehaviour
 {
+    // class properties
+    #region
     // Class properties
     [Header("Testing UI (Programming Debugging)")]
     [SerializeField] public TMPro.TextMeshProUGUI inventoryText;
@@ -23,6 +25,9 @@ public class player_interaction : MonoBehaviour
 
     private TeaController teacontroller;
     [SerializeField] bool full;
+
+    #endregion
+
     // Getters and Setters
     public void setRadius(float _radius)
     {
@@ -75,28 +80,7 @@ public class player_interaction : MonoBehaviour
         }
     }
 
-    public void ListInventory()
-    {
-        Debug.Log("LIST OF CURRENT OBJECTS IN LEAF INVENTORY");
-        foreach(var leaves in tealeaves)
-        {
-          //  Debug.Log("Object : " + leaves.name.ToUpper());           
-        }
-    }
    
-
-    public void PlaceObject(NavMeshAgent player, GameObject ob)
-    {
-       
-        
-        
-        
-    }
-    private void DestroyObject()
-    {
-
-    }
-
 }
 
 

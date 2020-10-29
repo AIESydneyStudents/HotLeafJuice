@@ -5,7 +5,8 @@ using TMPro;
 
 public class CookingStation : MonoBehaviour
 {
-    
+    // Class properties
+    #region
     private List<ingredient> playerInventory;
     private List<Orders> ordersList;
 
@@ -14,9 +15,9 @@ public class CookingStation : MonoBehaviour
 
     public TextMeshProUGUI Ordertext;
     public TextMeshProUGUI stateText;
-    
+    #endregion
 
-    private  string ListToText(List<string> text)
+    private string ListToText(List<string> text)
     {
         string result = " ";
         foreach(var str in text)
@@ -34,8 +35,6 @@ public class CookingStation : MonoBehaviour
         ordersList = orders;
 
     }
-
-
 
     public bool AcceptIngredient(ingredient ingredient)
     {
@@ -58,8 +57,5 @@ public class CookingStation : MonoBehaviour
        
         
     }
-
-
-
-    
+  
 }
