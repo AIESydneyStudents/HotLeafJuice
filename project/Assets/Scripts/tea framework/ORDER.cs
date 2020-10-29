@@ -99,15 +99,27 @@ public class ORDER : MonoBehaviour
     public void ExportJSON(string filename)
     {
         string configFilepath = CONFIG_FILEPATH;
-        string jsonexport = "a";
+        string jsonexport = " ";
         foreach(var thing in this.orderList)
         {
+            
             jsonexport += JsonUtility.ToJson(thing, true);           
         }
 
         if (File.Exists(configFilepath))
         {
-            
+            if (jsonexport.Length < 0)
+            {
+                using (FileStream fs = File.Create(configFilepath))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes(jsonexport);
+                    fs.Write(info, 0, jsonexport.Length);
+                }
+            }
+            else
+            {
+                return;
+            }
         }
         else
         {

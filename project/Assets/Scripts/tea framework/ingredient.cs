@@ -6,6 +6,8 @@ using UnityEngine.SocialPlatforms.Impl;
 /// <summary>
 /// Ingredient scriptable object base class
 /// </summary>
+[System.Serializable]
+
 public class ingredient : MonoBehaviour
 {
     /// <summary>
