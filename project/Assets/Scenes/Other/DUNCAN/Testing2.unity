@@ -3354,11 +3354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6d3b75d6eb9694b9abf82aa2805082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movement_Disable: 0
   MovementController: {fileID: 1112248290}
   movementSpeed: 4.65
-  ClickToMove: 0
-  GridMovementEnabled: 1
-  gridSnap: 5
+  camera_lock: 0
   cameraController: {fileID: 2139726757}
   playerCamera: {fileID: 1721121660}
   cameraMoveRange: 0
@@ -3369,8 +3368,8 @@ MonoBehaviour:
   inventorySizeLimit: 1
   InteractionKeybinding: 101
   MenuKeybinding: 27
-  InventoryKeybinding: 32
-  PlaceObjectKeybinding: 118
+  InventoryKeybinding: 118
+  PlaceObjectKeybinding: 122
   teaController: {fileID: 1591551278}
   ingredients: []
   cookingStationController: {fileID: 1623548193}

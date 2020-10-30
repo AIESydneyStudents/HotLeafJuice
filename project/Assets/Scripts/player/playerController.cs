@@ -8,78 +8,61 @@ public class playerController : MonoBehaviour
 
     // Serialised fields for editor access
     #region
-    // Movement settings
-    [Header("Movement Settings")]
-    [SerializeField] 
-    [Tooltip("Movement controller scriptable object")]
-    private player_movement MovementController;
+    public bool Movement_Disable;
+  
+    public player_movement MovementController;
     public float movementSpeed;
-    [SerializeField]
-    [Tooltip("Enable or Disable click to move")]
+  
     private bool ClickToMove;
 
-    [Header("Grid Movement")]
-    [SerializeField]
-    private bool GridMovementEnabled;
-    [SerializeField]
-    private float gridSnap;
    
+    private bool GridMovementEnabled;
+   
+    private float gridSnap;
+    #endregion
 
-    // Camera settings
-    [Header("Camera Settings")]
-    [SerializeField]
-    [Tooltip("Camera controller")]
-    private camerafollow cameraController;
-    [SerializeField]
-    [Tooltip("Camera Assigned to player")]
-    Camera playerCamera;
+    #region
+    // Camera Controller
 
-    [SerializeField]
-    [Range(0, 10)]
-    private float cameraMoveRange;
+    public bool camera_lock;
 
-    [Range(1, 10)]
+    public camerafollow cameraController;
+
+    public Camera playerCamera;
+
+    public float cameraMoveRange;
+
+  
     public float cameraSpeed;
 
-    
-    // Interaction Settings
-    [Header("Interaction Settings")]
-    [SerializeField]
-    [Tooltip("Interaction Controller Scriptable Object")]
-    private player_interaction InteractionController;
-    [SerializeField]
-    private Transform meshTransform;
-    [Tooltip("The range at which an object can be interacted with")]
-    [Range(0f,5f)] 
+
+
+    public player_interaction InteractionController;
+
+    public Transform meshTransform;
+  
     public float pickupRange;
-    [SerializeField]
-    [Tooltip("Max limit of inventory")]
-    private float inventorySizeLimit;
-    [SerializeField]
-    [Tooltip("Keybinding for interacting with objects")]
-    private KeyCode InteractionKeybinding;
-    [SerializeField]
-    [Tooltip("Keybinding to open menu")]
-    private KeyCode MenuKeybinding;
-    [SerializeField]
-    [Tooltip("Inventory Keybinding")]
-    private KeyCode InventoryKeybinding;
-    [SerializeField]
-    [Tooltip("Place Object KeyBinding")]
-    private KeyCode PlaceObjectKeybinding;
- 
+
+    public float inventorySizeLimit;
+
+    public KeyCode InteractionKeybinding = KeyCode.E;
+
+    public KeyCode MenuKeybinding = KeyCode.P;
+
+    public KeyCode InventoryKeybinding = KeyCode.Space;
+
+    public KeyCode PlaceObjectKeybinding = KeyCode.Q;
+
 
     // Tea Framework
-    [Header("Tea Framework")]
-    [SerializeField]
-    private TeaController teaController;
-    [SerializeField]
-    [Tooltip("Player Ingredients")]
-    private List<ingredient> ingredients;
-    [SerializeField]
-    private CookingStation cookingStationController;
-    [SerializeField]
-    private ORDER ORDER;
+
+    public TeaController teaController;
+
+    public List<ingredient> ingredients;
+
+    public CookingStation cookingStationController;
+
+    public ORDER ORDER;
     #endregion
    
     void Start()
