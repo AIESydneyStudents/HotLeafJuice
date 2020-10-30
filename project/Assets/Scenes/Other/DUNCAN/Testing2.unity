@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryText: {fileID: 882555493}
-  limit: 1
+  limit: 2
   inventorySize: 0
   tealeaves:
   - {fileID: 0}
@@ -2826,8 +2826,18 @@ MonoBehaviour:
     - {fileID: 1884367438}
     isCompleted: 0
     orderTimer: 50
+  - title: sugar
+    ingredients:
+    - {fileID: 1884367438}
+    isCompleted: 0
+    orderTimer: 50
+  - title: Black Tea
+    ingredients:
+    - {fileID: 1798537083}
+    isCompleted: 0
+    orderTimer: 50
   importJSON: 0
-  exportJSON: 1
+  exportJSON: 0
   orderList: []
 --- !u!1 &1623548187 stripped
 GameObject:
