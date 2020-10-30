@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-
-    // Serialised fields for editor access
-    #region
+    /// <summary>
+    /// Player controller interaction attributes
+    /// </summary>
+    #region Class variables
     public bool Movement_Disable;
   
     public player_movement MovementController;
@@ -21,7 +22,7 @@ public class playerController : MonoBehaviour
     private float gridSnap;
     #endregion
 
-    #region
+    #region Public Fields for Editor Script
     // Camera Controller
 
     public bool camera_lock;
@@ -65,6 +66,9 @@ public class playerController : MonoBehaviour
     public ORDER ORDER;
     #endregion
    
+    /// <summary>
+    /// Called once the scene compiles
+    /// </summary>
     void Start()
     {
         MovementController.playerAgent.speed = movementSpeed;
@@ -72,13 +76,17 @@ public class playerController : MonoBehaviour
         cameraController.InitCamera();       
         StartLevel();
     }
-
+     /// <summary>
+     /// Load needed variables
+     /// </summary>
     void StartLevel()
     {
         cookingStationController.loadOrder(ORDER.orderList);
     }  
 
-    // Update is called once per frame
+    /// <summary>
+    /// Called once per frame
+    /// </summary>
     void Update()
     {
         ingredients = teaController.ingredients;
@@ -185,13 +193,18 @@ public class playerController : MonoBehaviour
 
     }
 
-    // Change pickup radius of the interaction controller
+    /// <summary>
+    /// Update radius
+    /// </summary>
     void ConfigInteractionController()
     {
         InteractionController.setRadius(pickupRange);
 
     }
 
+    /// <summary>
+    /// Set movement type
+    /// </summary>
     void ConfigMovementType()
     {
             if (ClickToMove == true)

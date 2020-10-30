@@ -55,7 +55,7 @@ public class Timer
     /// </summary>
     public void StartTimer()
     {
-        isRunning = false;
+        isRunning = true;
         timeRemaining = initialTime;
     }
 
@@ -65,7 +65,7 @@ public class Timer
     /// <param name="length"></param>
     public void StartTimer(float length)
     {
-        isRunning = false;
+        isRunning = true;
         timeRemaining = length;
     }
    
@@ -143,6 +143,7 @@ public class Orders
         Debug.Log("Invoke Import");
     }
 
+    
 
 
 }

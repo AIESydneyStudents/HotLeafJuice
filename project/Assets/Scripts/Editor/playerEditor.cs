@@ -1,20 +1,33 @@
 ﻿using Unity;
 using UnityEditor;
 using UnityEngine;
+using System.IO;
+using System.Text;
 using System;
 
-
+/// <summary>
+/// Target the player controller scriptable object
+/// </summary>
 [CustomEditor(typeof(playerController))]
 public class playerEditor : Editor
 {
+    /// <summary>
+    /// Set the hidden fields variables
+    /// </summary>
+
+    #region Show Bools
     bool movementShow = true;
     bool cameraShow = true;
     bool interactionShow = true;
     bool teaShow = true;
-    bool cookingShow = true;
-    bool orderShow = true;
+    bool JSONOPTIONS = false;
 
-    #region 
+    string filePath = @"C:\TeaTurmoil\config\order.json";
+    
+    string text;
+    #endregion
+
+    #region Unity Gameobjects
     public UnityEngine.Object movement;
 
     public UnityEngine.Object camera;
@@ -28,12 +41,15 @@ public class playerEditor : Editor
     public UnityEngine.Object order;
     #endregion 
 
-
+    /// <summary>
+    /// Called to update the info shown on the UI
+    /// </summary>
     public override void OnInspectorGUI()
     {
+        // Open the script as an object
         var controller = target as playerController;
 
-        movementShow = EditorGUILayout.Foldout(movementShow, "Movement Settings"); 
+        movementShow = EditorGUILayout.Foldout(movementShow, "Movement Settings");
         if (movementShow)
         {
 
@@ -46,7 +62,7 @@ public class playerEditor : Editor
             EditorGUI.indentLevel--;
 
         }
-       
+
         cameraShow = EditorGUILayout.Foldout(cameraShow, "Camera Settings");
         if (cameraShow)
         {
@@ -61,12 +77,12 @@ public class playerEditor : Editor
             controller.cameraSpeed = EditorGUILayout.FloatField(controller.cameraSpeed);
 
             EditorGUILayout.PrefixLabel("Camera Range");
-            controller.cameraMoveRange = EditorGUILayout.Slider(controller.cameraMoveRange, 0, 10);     
-            
+            controller.cameraMoveRange = EditorGUILayout.Slider(controller.cameraMoveRange, 0, 10);
+
             EditorGUI.indentLevel--;
 
         }
-       
+
         interactionShow = EditorGUILayout.Foldout(interactionShow, "Interaction Settings");
         if (interactionShow)
         {
@@ -94,9 +110,41 @@ public class playerEditor : Editor
             cooking = EditorGUILayout.ObjectField(cooking, typeof(CookingStation), true);
             order = EditorGUILayout.ObjectField(order, typeof(ORDER), true);
             EditorGUI.indentLevel--;
-        }      
-    }
+        }
 
+        JSONOPTIONS = EditorGUILayout.Foldout(JSONOPTIONS, "JSON Options");
+        if (JSONOPTIONS)
+        {
+            if (GUILayout.Button("Load JSON"))
+            {
+
+               // Load from text file here
+               
+                if (File.Exists(filePath))
+                {
+                    text = File.ReadAllText(filePath);
+                }
+                
+
+
+            }
+            if (GUILayout.Button("Export JSON"))
+            {
+
+            }
+
+
+            EditorGUILayout.PrefixLabel("JSON Preview");
+
+
+            text = EditorGUILayout.TextField(text, GUILayout.Height(200) );
+        }
+    }
+    
+
+    /// <summary>
+    /// Reset the overlay and update the controller
+    /// </summary>
     public void OnInspectorUpdate()
     {
         this.Repaint();

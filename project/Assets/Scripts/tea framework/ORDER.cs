@@ -10,14 +10,16 @@ using System;
 /// </summary>
 public class ORDER : MonoBehaviour
 {
-    const string CONFIG_FILEPATH = @"C:\TeaTurmoil\config\order.json";
-    #region
+    public string CONFIG_FILEPATH = @"C:\TeaTurmoil\config\order.json";
+    #region Class Variables
 
     [SerializeField] UnityEngine.UI.Slider slider;
     [SerializeField] float timerTime;
+
     private string orderName;
     private int orderScore;
     private bool completed;
+
     private Timer timer;
     [SerializeField] List<npcOrders> Orders;
     #endregion
@@ -27,6 +29,8 @@ public class ORDER : MonoBehaviour
     public bool importJSON;
     public bool exportJSON;
 
+    private bool orderStart = false;
+    private string jsonexport = " ";
     //public bool disableEditor;
 
 
@@ -96,10 +100,45 @@ public class ORDER : MonoBehaviour
         }
     }
 
+    public void StartOrder_BUTTON()
+    {
+        orderStart = true;
+    }
+
+
+     /// <summary>
+     /// RUNS THE ORDER LOOP
+     /// 
+     /// </summary>
+    private void Update()
+    {
+        if (orderStart == true)
+        {
+            timer.StartTimer(timerTime);
+
+            orderStart = false;
+        }
+
+        
+
+        timer.Update();
+
+        Debug.Log(timer.timeRemaining);
+
+
+
+    }
+
+
+    public string SendJSON()
+    {
+        return jsonexport;
+    }
+
     public void ExportJSON(string filename)
     {
         string configFilepath = CONFIG_FILEPATH;
-        string jsonexport = " ";
+        
         foreach(var thing in this.orderList)
         {
             
