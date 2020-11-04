@@ -63,6 +63,8 @@ public class playerController : MonoBehaviour
 
     public CookingStation cookingStationController;
 
+    public NPCEditor nPC;
+   
     public ORDER ORDER;
     #endregion
    
@@ -71,17 +73,24 @@ public class playerController : MonoBehaviour
     /// </summary>
     void Start()
     {
+        
         MovementController.playerAgent.speed = movementSpeed;
         ConfigInteractionController();
-        cameraController.InitCamera();       
+        cameraController.InitCamera();
+        
         StartLevel();
+        
     }
      /// <summary>
      /// Load needed variables
      /// </summary>
     void StartLevel()
     {
+        
         cookingStationController.loadOrder(ORDER.orderList);
+
+        nPC.GetOrders(ORDER.orderList);
+
     }  
 
     /// <summary>

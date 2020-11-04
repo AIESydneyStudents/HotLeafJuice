@@ -92,7 +92,7 @@ public class Orders
     public List<ingredient> ingredients;
     public int score;
     public float orderTimer;
-
+    public int diffLevel;
   
     
 
@@ -119,12 +119,13 @@ public class Orders
     /// <param name="_ingredients"></param>
     /// <param name="timer"></param>
     /// 
-    public Orders(string _name, List<ingredient> _ingredients, float timer)
+    public Orders(string _name, List<ingredient> _ingredients, float timer, int _difflevel)
     {
         name = _name;
         ingredients = _ingredients;
         score = ReturnScore();
         orderTimer = timer;
+        diffLevel = _difflevel;
     }
 
     /// <summary>

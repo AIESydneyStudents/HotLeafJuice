@@ -26,7 +26,7 @@ public class ORDER : MonoBehaviour
 
 
     // bool jsonOptions = true;
-    public bool importJSON;
+    //public bool importJSON;
     public bool exportJSON;
 
     private bool orderStart = false;
@@ -40,7 +40,9 @@ public class ORDER : MonoBehaviour
     [System.Serializable]
     struct npcOrders
     {
+
         public string title;
+        [Range(1,3)] public int diffLevel;
         public List<ingredient> ingredients;
         public bool isCompleted;
         public float orderTimer;
@@ -67,19 +69,18 @@ public class ORDER : MonoBehaviour
         
         foreach (var PleaseLetItEnd in Orders)
         {
-            Orders order = new Orders(PleaseLetItEnd.title, PleaseLetItEnd.ingredients, PleaseLetItEnd.orderTimer);
+            Orders order = new Orders(
+                PleaseLetItEnd.title, 
+                PleaseLetItEnd.ingredients, 
+                PleaseLetItEnd.orderTimer, 
+                PleaseLetItEnd.diffLevel);
             orderList.Add(order);
-        }
-
-        foreach (var ord in orderList)
-        {
-            Debug.Log(ord + " | " + ord.score);
-            
         }
         if (exportJSON == true)
         {
             ExportJSON("");
         }
+
         timer = new Timer(timerTime); // create new timer object
     }
 
@@ -118,15 +119,8 @@ public class ORDER : MonoBehaviour
 
             orderStart = false;
         }
-
-        
-
         timer.Update();
-
-        Debug.Log(timer.timeRemaining);
-
-
-
+       // Debug.Log(timer.timeRemaining);
     }
 
 
@@ -171,9 +165,10 @@ public class ORDER : MonoBehaviour
                 }
                 else
                 {
-                    DirectoryInfo dick = Directory.CreateDirectory(@"C:\TeaTurmoil\config\");
+                    DirectoryInfo dir = Directory.CreateDirectory(@"C:\TeaTurmoil\config\");
 
                 }
+
                 using (FileStream fs = File.Create(configFilepath))
                 {
                     byte[] info = new UTF8Encoding(true).GetBytes(jsonexport);

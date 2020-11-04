@@ -9,6 +9,7 @@ public class camerafollow : MonoBehaviour
     #region
     private Vector3 sidescroll;
     private Vector3 old;
+    [SerializeField] private float defaultPosition;
     [SerializeField] private float zoffset = -7;
     [SerializeField] private Collider cameraStop;
     [SerializeField] private bool xAxis;
@@ -39,7 +40,7 @@ public class camerafollow : MonoBehaviour
             else
             {
                 cameraSpeed = 1f;
-                sidescroll.x = 0;
+                sidescroll.x = defaultPosition;
                 sidescroll.y = camera.transform.position.y;
                 sidescroll.z = camera.transform.position.z;
             }
@@ -71,7 +72,7 @@ public class camerafollow : MonoBehaviour
             else
             {
                 cameraSpeed = 1f;
-                sidescroll.x = 0;
+                sidescroll.x = defaultPosition;
                 sidescroll.y = camera.transform.position.y;
                 sidescroll.z = camera.transform.position.z;
             }
@@ -102,7 +103,7 @@ public class camerafollow : MonoBehaviour
             else
             {
                 cameraSpeed = 1f;
-                sidescroll.x = 0;
+                sidescroll.x = defaultPosition;
                 sidescroll.y = camera.transform.position.y;
                 sidescroll.z = camera.transform.position.z;
             }
