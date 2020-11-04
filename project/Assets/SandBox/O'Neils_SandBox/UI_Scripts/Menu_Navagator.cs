@@ -20,4 +20,9 @@ public void PlayGame()
     {
         SceneManager.LoadScene(0);
     }
+
+    public void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
+    }
 }
