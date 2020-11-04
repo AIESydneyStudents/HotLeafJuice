@@ -526,6 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676fd9bc0f9a0c4980d846930221f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Green Tea Leaves
 --- !u!65 &92129380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1220,12 +1221,12 @@ RectTransform:
   m_Children:
   - {fileID: 1687921922}
   m_Father: {fileID: 370885294}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -133}
-  m_SizeDelta: {x: 245.3, y: 97.5}
+  m_AnchoredPosition: {x: 0, y: -159}
+  m_SizeDelta: {x: 119.7, y: 66.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126938024
 MonoBehaviour:
@@ -1709,7 +1710,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1997.3, y: 1038.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &229460174 stripped
 Transform:
@@ -1848,6 +1849,162 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1053570471}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &252799395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252799396}
+  - component: {fileID: 252799398}
+  - component: {fileID: 252799397}
+  m_Layer: 5
+  m_Name: Pause_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &252799396
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252799395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 370885294}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 422.4}
+  m_SizeDelta: {x: 434.9, y: 193.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &252799397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252799395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: PAUSE
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 80bdf34abe7a7e748b055eb52819ac1b, type: 2}
+  m_sharedMaterial: {fileID: 2463824225205660348, guid: 80bdf34abe7a7e748b055eb52819ac1b,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 100
+  m_fontSizeBase: 100
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 252799397}
+    characterCount: 5
+    spriteCount: 0
+    spaceCount: 0
+    wordCount: 1
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &252799398
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252799395}
+  m_CullTransparentMesh: 0
 --- !u!1001 &253945227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2539,9 +2696,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1290641440}
   - {fileID: 1086249696}
   - {fileID: 1337158178}
   - {fileID: 126938023}
+  - {fileID: 252799396}
   m_Father: {fileID: 1864253720}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2621,7 +2780,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 434.9, y: 183.2}
+  m_SizeDelta: {x: 212.8, y: 94.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371478809
 MonoBehaviour:
@@ -2643,8 +2802,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7c6d3060e6b720745b2d28c9f4082540, type: 2}
-  m_sharedMaterial: {fileID: 4023764544163360014, guid: 7c6d3060e6b720745b2d28c9f4082540,
+  m_fontAsset: {fileID: 11400000, guid: e223dae66f25f784bbd8cadb6b22fa8a, type: 2}
+  m_sharedMaterial: {fileID: 4229025794306860222, guid: e223dae66f25f784bbd8cadb6b22fa8a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2671,8 +2830,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 68.49
-  m_fontSizeBase: 68.49
+  m_fontSize: 62
+  m_fontSizeBase: 62
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2789,6 +2948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676fd9bc0f9a0c4980d846930221f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Green Tea Leaves
 --- !u!65 &371655553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3423,6 +3583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6941a2631648b374f96403b79424061b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Raw sugar
 --- !u!65 &560733804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3529,6 +3690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6941a2631648b374f96403b79424061b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Raw sugar
 --- !u!65 &562513262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3874,6 +4036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5424b5c685db5234b839047e08337ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Artifical Sweetener
 --- !u!208 &645322891
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4426,11 +4589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6d3b75d6eb9694b9abf82aa2805082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movement_Disable: 0
   MovementController: {fileID: 1999660054}
   movementSpeed: 4.2
-  ClickToMove: 0
-  GridMovementEnabled: 0
-  gridSnap: 5
+  camera_lock: 0
   cameraController: {fileID: 1231624089}
   playerCamera: {fileID: 1658090166}
   cameraMoveRange: 10
@@ -5292,8 +5454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -717, y: 401}
-  m_SizeDelta: {x: 2787.4, y: 1013.8}
+  m_AnchoredPosition: {x: -727, y: 420}
+  m_SizeDelta: {x: 861.1, y: -12.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919622774
 MonoBehaviour:
@@ -5627,12 +5789,12 @@ RectTransform:
   m_Children:
   - {fileID: 1641388103}
   m_Father: {fileID: 370885294}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 213}
-  m_SizeDelta: {x: 434.9, y: 183.2}
+  m_AnchoredPosition: {x: 0, y: 128}
+  m_SizeDelta: {x: 200.4, y: 75.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086249697
 MonoBehaviour:
@@ -5776,6 +5938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676fd9bc0f9a0c4980d846930221f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Green Tea Leaves
 --- !u!65 &1101963858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6606,6 +6769,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebe56b49aea0cb49be4eb5088ff4a89, type: 3}
+--- !u!1 &1290641439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290641440}
+  - component: {fileID: 1290641442}
+  - component: {fileID: 1290641441}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1290641440
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290641439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 370885294}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -1393.2, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1290641441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290641439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1290641442
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290641439}
+  m_CullTransparentMesh: 0
 --- !u!4 &1336151507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2805942551688631794, guid: 5ebe56b49aea0cb49be4eb5088ff4a89,
@@ -6644,12 +6880,12 @@ RectTransform:
   m_Children:
   - {fileID: 371478808}
   m_Father: {fileID: 370885294}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 22}
-  m_SizeDelta: {x: 245.3, y: 97.5}
+  m_AnchoredPosition: {x: 0, y: 0.000015259}
+  m_SizeDelta: {x: 183.5, y: 79.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337158179
 MonoBehaviour:
@@ -7140,9 +7376,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7c6d3060e6b720745b2d28c9f4082540, type: 2}
-  m_sharedMaterial: {fileID: 4023764544163360014, guid: 7c6d3060e6b720745b2d28c9f4082540,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7185,7 +7420,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -7682,6 +7917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676fd9bc0f9a0c4980d846930221f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Green Tea Leaves
 --- !u!65 &1609504393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7777,7 +8013,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 434.9, y: 183.2}
+  m_SizeDelta: {x: 236.4, y: 83.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641388104
 MonoBehaviour:
@@ -7799,8 +8035,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Resume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7c6d3060e6b720745b2d28c9f4082540, type: 2}
-  m_sharedMaterial: {fileID: 4023764544163360014, guid: 7c6d3060e6b720745b2d28c9f4082540,
+  m_fontAsset: {fileID: 11400000, guid: e223dae66f25f784bbd8cadb6b22fa8a, type: 2}
+  m_sharedMaterial: {fileID: 4229025794306860222, guid: e223dae66f25f784bbd8cadb6b22fa8a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7827,8 +8063,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 112.1
-  m_fontSizeBase: 112.1
+  m_fontSize: 62
+  m_fontSizeBase: 62
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8171,7 +8407,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 434.9, y: 183.2}
+  m_SizeDelta: {x: 217, y: 109.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687921923
 MonoBehaviour:
@@ -8193,8 +8429,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7c6d3060e6b720745b2d28c9f4082540, type: 2}
-  m_sharedMaterial: {fileID: 4023764544163360014, guid: 7c6d3060e6b720745b2d28c9f4082540,
+  m_fontAsset: {fileID: 11400000, guid: e223dae66f25f784bbd8cadb6b22fa8a, type: 2}
+  m_sharedMaterial: {fileID: 4229025794306860222, guid: e223dae66f25f784bbd8cadb6b22fa8a,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8221,8 +8457,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 68.49
-  m_fontSizeBase: 68.49
+  m_fontSize: 62
+  m_fontSizeBase: 62
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8339,6 +8575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676fd9bc0f9a0c4980d846930221f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Green Tea Leaves
 --- !u!65 &1704856751
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8816,6 +9053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5424b5c685db5234b839047e08337ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Artifical Sweetener
 --- !u!208 &1781873236
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9089,9 +9327,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4b4c12c15693e459f45ce017530601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CONFIG_FILEPATH: C:\TeaTurmoil\config\order.json
   slider: {fileID: 0}
   timerTime: 0
   Orders: []
+  importJSON: 0
+  exportJSON: 0
+  orderList: []
 --- !u!114 &1811142553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9212,6 +9454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5424b5c685db5234b839047e08337ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Artifical Sweetener
 --- !u!208 &1844946252
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -9390,8 +9633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 868, y: 435}
-  m_SizeDelta: {x: 1820, y: 845.8495}
+  m_AnchoredPosition: {x: 858, y: 440}
+  m_SizeDelta: {x: 285.9, y: 199.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881384740
 MonoBehaviour:
@@ -9459,6 +9702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5424b5c685db5234b839047e08337ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Artifical Sweetener
 --- !u!114 &1905938045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9877,6 +10121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c676fd9bc0f9a0c4980d846930221f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectname: Green Tea Leaves
 --- !u!65 &2109317823
 BoxCollider:
   m_ObjectHideFlags: 0
