@@ -57,9 +57,6 @@ public class player_movement : MonoBehaviour
 
     public void ControllerMovement(float dt)
     {
-
-
-
         xPos = Input.GetAxis("Horizontal");
         zPos = Input.GetAxis("Vertical");
 
@@ -85,8 +82,7 @@ public class player_movement : MonoBehaviour
             playerAgent.transform.position += new Vector3(0, 0, zPos * playerAgent.speed * dt);
         }
 
-        
-
+   
         zPos = 0;
         xPos = 0;
 

@@ -15,13 +15,17 @@ public class ORDER : MonoBehaviour
 
     [SerializeField] UnityEngine.UI.Slider slider;
     [SerializeField] float timerTime;
-
+    [SerializeField] private Spawner spawner;
+    private List<Orders> level1 = new List<Orders>();
+    private List<Orders> level2 = new List<Orders>();
+    private List<Orders> level3 = new List<Orders>();
     private string orderName;
     private int orderScore;
     private bool completed;
 
     private Timer timer;
     [SerializeField] List<npcOrders> Orders;
+    private System.Random rand;
     #endregion
 
 
@@ -42,14 +46,30 @@ public class ORDER : MonoBehaviour
     {
 
         public string title;
-        [Range(1,3)] public int diffLevel;
+        [Range(1, 3)] public int diffLevel;
         public List<ingredient> ingredients;
         public bool isCompleted;
         public float orderTimer;
 
     }
+
+
+    [System.Serializable]
+    public struct npcEditor
+    {
+        public string npc_name;
+        [Range(1, 3)] public int difficultyLevel;
+
+        public Mesh headMesh;
+    }
+
+    public List<npcEditor> NPC_Editor;
+    private List<NPC> MainNPCsList = new List<NPC>();
+
+
+
     [HideInInspector]
-     public List<Orders> orderList = new List<Orders>();
+    public List<Orders> orderList = new List<Orders>();
 
 
     /// <summary>
@@ -66,16 +86,40 @@ public class ORDER : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        
+
         foreach (var PleaseLetItEnd in Orders)
         {
             Orders order = new Orders(
-                PleaseLetItEnd.title, 
-                PleaseLetItEnd.ingredients, 
-                PleaseLetItEnd.orderTimer, 
+                PleaseLetItEnd.title,
+                PleaseLetItEnd.ingredients,
+                PleaseLetItEnd.orderTimer,
                 PleaseLetItEnd.diffLevel);
             orderList.Add(order);
         }
+
+        rand = new System.Random();
+
+        foreach (var npc in NPC_Editor)
+        {
+
+            NPC newnpc = new NPC(
+                npc.npc_name,
+                spawner.transform
+                );
+            newnpc.SetType(npc.headMesh, npc.difficultyLevel);
+            newnpc.orderForNPC = getOrder(npc.difficultyLevel);
+            MainNPCsList.Add(newnpc);
+
+        }
+
+        foreach (var npc in MainNPCsList)
+        {
+            Debug.Log(npc.orderForNPC.diffLevel);
+        }
+
+
+
+
         if (exportJSON == true)
         {
             ExportJSON("");
@@ -93,7 +137,7 @@ public class ORDER : MonoBehaviour
         slider.value = time;
         if (slider.value <= 30)
         {
-            
+
         }
         if (slider.value <= 10)
         {
@@ -107,20 +151,20 @@ public class ORDER : MonoBehaviour
     }
 
 
-     /// <summary>
-     /// RUNS THE ORDER LOOP
-     /// 
-     /// </summary>
+    /// <summary>
+    /// RUNS THE ORDER LOOP
+    /// 
+    /// </summary>
     private void Update()
     {
-        if (orderStart == true)
-        {
-            timer.StartTimer(timerTime);
+        //if (orderStart == true)
+        //{
+        //    timer.StartTimer(timerTime);
 
-            orderStart = false;
-        }
-        timer.Update();
-       // Debug.Log(timer.timeRemaining);
+        //    orderStart = false;
+        //}
+        //timer.Update();
+        // Debug.Log(timer.timeRemaining);
     }
 
 
@@ -132,11 +176,11 @@ public class ORDER : MonoBehaviour
     public void ExportJSON(string filename)
     {
         string configFilepath = CONFIG_FILEPATH;
-        
-        foreach(var thing in this.orderList)
+
+        foreach (var thing in this.orderList)
         {
-            
-            jsonexport += JsonUtility.ToJson(thing, true);           
+
+            jsonexport += JsonUtility.ToJson(thing, true);
         }
 
         if (File.Exists(configFilepath))
@@ -183,9 +227,52 @@ public class ORDER : MonoBehaviour
 
         Debug.Log(jsonexport.ToString());
     }
+    private Orders getOrder(int level)
+    {
 
 
+        foreach (var f in orderList)
+        {
+            if (f.diffLevel == 1)
+            {
+                level1.Add(f);
+            }
+            if (f.diffLevel == 2)
+            {
+                level2.Add(f);
+            }
+            if (f.diffLevel == 3)
+            {
+                level3.Add(f);
+            }
+        }
+
+
+        if (level == 1)
+        {
+            Orders order = level1[rand.Next(level1.Count)];
+            return order;
+        }
+        if (level == 2)
+        {
+            Orders order = level2[rand.Next(level2.Count)];
+            return order;
+        }
+        if (level == 3)
+        {
+            Orders order = level3[rand.Next(level3.Count)];
+            return order;
+        }
+
+        else
+        {
+            return null;
+        }
+
+
+    }
 }
 
 
 
+    

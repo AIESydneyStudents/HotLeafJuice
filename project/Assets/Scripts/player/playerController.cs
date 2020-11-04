@@ -63,7 +63,7 @@ public class playerController : MonoBehaviour
 
     public CookingStation cookingStationController;
 
-    public NPCEditor nPC;
+  
    
     public ORDER ORDER;
     #endregion
@@ -77,7 +77,8 @@ public class playerController : MonoBehaviour
         MovementController.playerAgent.speed = movementSpeed;
         ConfigInteractionController();
         cameraController.InitCamera();
-        
+
+       
         StartLevel();
         
     }
@@ -85,12 +86,8 @@ public class playerController : MonoBehaviour
      /// Load needed variables
      /// </summary>
     void StartLevel()
-    {
-        
+    {       
         cookingStationController.loadOrder(ORDER.orderList);
-
-        nPC.GetOrders(ORDER.orderList);
-
     }  
 
     /// <summary>

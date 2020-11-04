@@ -39,7 +39,6 @@ public class playerEditor : Editor
     public UnityEngine.Object tea;
     public UnityEngine.Object cooking;
     public UnityEngine.Object order;
-    public UnityEngine.Object npc;
     #endregion 
 
     /// <summary>
@@ -110,7 +109,6 @@ public class playerEditor : Editor
             tea = EditorGUILayout.ObjectField(tea, typeof(TeaController), true);
             cooking = EditorGUILayout.ObjectField(cooking, typeof(CookingStation), true);
             order = EditorGUILayout.ObjectField(order, typeof(ORDER), true);
-            npc = EditorGUILayout.ObjectField(npc, typeof(NPC), true);
             EditorGUI.indentLevel--;
         }
 

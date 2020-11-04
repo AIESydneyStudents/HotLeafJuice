@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryText: {fileID: 882555493}
-  limit: 2
+  limit: 1
   inventorySize: 0
   tealeaves:
   - {fileID: 0}
@@ -2437,7 +2437,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 998340619}
-  - component: {fileID: 998340618}
   m_Layer: 0
   m_Name: NPC EVENT SYSTEM
   m_TagString: Untagged
@@ -2445,25 +2444,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &998340618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998340617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dfcf910f746b9444838ca57633a8209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawner: {fileID: 1857896879}
-  SpawnDelay: 0
-  NPC_Editor:
-  - npc_name: Tea Man
-    difficultyLevel: 2
-    headMesh: {fileID: -7155083018148107846, guid: f3c3e34f1b7ad0e4f932b2d701fb68d3,
-      type: 3}
 --- !u!4 &998340619
 Transform:
   m_ObjectHideFlags: 0
@@ -3045,6 +3025,7 @@ MonoBehaviour:
     isCompleted: 0
     orderTimer: 0
   exportJSON: 1
+  NPC_Editor: []
   orderList: []
 --- !u!1 &1623548187 stripped
 GameObject:
@@ -3354,7 +3335,7 @@ MonoBehaviour:
   teaController: {fileID: 1591551278}
   ingredients: []
   cookingStationController: {fileID: 1623548193}
-  nPC: {fileID: 0}
+  NPC: {fileID: 0}
   ORDER: {fileID: 1591551280}
 --- !u!195 &1684442679
 NavMeshAgent:
