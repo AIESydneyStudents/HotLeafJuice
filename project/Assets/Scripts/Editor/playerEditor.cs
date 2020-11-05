@@ -125,8 +125,6 @@ public class playerEditor : Editor
                     text = File.ReadAllText(filePath);
                 }
                 
-
-
             }
            
 

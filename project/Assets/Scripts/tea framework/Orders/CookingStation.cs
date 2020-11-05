@@ -7,10 +7,10 @@ public class CookingStation : MonoBehaviour
 {
     // Class properties
     #region
-    private List<ingredient> playerInventory;
-    private List<Orders> ordersList;
+    private List<ingredient> playerInventory = new List<ingredient>();
+    private List<Orders> ordersList = new List<Orders>();
 
-    private List<Orders> cookingList;
+    private List<Orders> cookingList = new List<Orders>();
     private float totalScore = 0;
 
     public TextMeshProUGUI Ordertext;

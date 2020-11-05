@@ -4,12 +4,10 @@ using UnityEngine;
 
 
 
-public class NPC
+public class NPC 
 {
 
-
     public string npcName;
-
     /// <summary>
     /// Difficulty based on level number. 1 = easy, 2 = medium, 3 = hard
     /// </summary>
