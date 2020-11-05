@@ -57,11 +57,11 @@ public class playerController : MonoBehaviour
 
     // Tea Framework
 
-    public TeaController teaController;
+    public TeaController teaController = new TeaController();
 
     public List<ingredient> ingredients = new List<ingredient>();
 
-    public CookingStation cookingStationController;
+    public CookingStation CookingStation ;
 
     public ORDER ORDER;
     #endregion
@@ -71,18 +71,17 @@ public class playerController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        
+
+        CookingStation = GameObject.FindGameObjectWithTag("Cooking Station").GetComponent<CookingStation>();
+        CookingStation.LoadOrder(ORDER.orderList);
         MovementController.playerAgent.speed = movementSpeed;
         ConfigInteractionController();
         cameraController.InitCamera();
-
-        cookingStationController.loadOrder(ORDER.orderList);
+       
         
         
     }
-     /// <summary>
-     /// Load needed variables
-     /// </summary>
+    
   
 
     /// <summary>
@@ -90,8 +89,8 @@ public class playerController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        ingredients = teaController.ingredients;
-
+         ingredients = teaController.ingredients; // For When you pickup an object
+       //Debug.Log("");
         // Pick up objects
         if (Input.GetKeyDown(InteractionKeybinding) || Input.GetButtonDown("Fire1"))
         {
@@ -115,7 +114,7 @@ public class playerController : MonoBehaviour
 
                 MovementController.playerAgent.gameObject.transform.position, 
 
-                0.7f);
+                0.5f);
 
 
             foreach (var col in hitColliders)
@@ -147,20 +146,21 @@ public class playerController : MonoBehaviour
                 if (col.gameObject.tag == "Cooking Station")
                 {
                     
+                    bool check = CookingStation.AcceptIngredient(ingredients.First());
 
-                    if(cookingStationController.AcceptIngredient(ingredients.First()) == true)
+                    if (check)
                     {
                         InteractionController.inventoryText.text = " ";
 
                         InteractionController.inventorySize--;
                         ingredients.Remove(ingredients.First());
-
+                        CookingStation.textA.text = "Good Job";
                     }
                     else
                     {
-                        cookingStationController.stateText.text = "Cannot place that ingredient";
+                        CookingStation.textA.text = "Cannot place that ingredient";
                     }
-                    
+
                 }
 
                 if (col.gameObject.tag == "bin")

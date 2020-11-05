@@ -79,11 +79,11 @@ public class ORDER : MonoBehaviour
     public List<npcEditor> NPC_Editor;
     
     private List<NPC> MainNPCsList = new List<NPC>();
-
+    private bool runOnce;
     [HideInInspector]
     public List<Orders> orderList = new List<Orders>();
-
-
+    private int sizeCount = 0;
+    private int numOFNPC;
     /// <summary>
     /// Returns the completion state of the given order
     /// </summary>
@@ -98,7 +98,7 @@ public class ORDER : MonoBehaviour
     /// </summary>
     private void Start()
     {
-
+        runOnce = true;
         foreach (var PleaseLetItEnd in Orders)
         {
             Orders order = new Orders(
@@ -146,7 +146,7 @@ public class ORDER : MonoBehaviour
         }
 
 
-
+        numOFNPC = MainNPCsList.Count;
 
         timer = new Timer(timerTime); // create new timer object
     }
@@ -180,17 +180,23 @@ public class ORDER : MonoBehaviour
     /// </summary>
     private void Update()
     {
-
+        if (runOnce == true)
+        {
+            spawner.Spawn();
+            runOnce = false;
+            return;
+        }
         time += 1 * Time.deltaTime;
 
        // Debug.Log(time);
 
-        if (time >= spawnTimer)
+        if (time >= spawnTimer && sizeCount <= numOFNPC)
         {
             if (npcSpawnEnabled == true)
             {
                 spawner.Spawn();
                 time = 0;
+                sizeCount++;
             }
         }
 

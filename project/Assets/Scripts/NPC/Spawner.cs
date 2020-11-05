@@ -63,8 +63,15 @@ public class Spawner : MonoBehaviour
             {
                 if (col.gameObject.tag == "counter")
                 {
-                    
+
                     text.text = placedNPC.order.name.ToString() + "\n";
+
+                    //List<ingredient> ingredients = new List<ingredient>();
+
+                    foreach (var bbbb in placedNPC.order.ingredients)
+                    {
+                        text.text += bbbb.Objectname;
+                    }
 
                   //  Debug.Log(text.text);
                 }
@@ -72,7 +79,7 @@ public class Spawner : MonoBehaviour
 
 
         }
-      //  NPC.gameObject.SetActive(false);
+       // NPC.SetDestination(target.gameObject.transform.position);
 
     }
 }

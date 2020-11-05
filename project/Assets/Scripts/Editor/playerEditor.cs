@@ -23,7 +23,7 @@ public class playerEditor : Editor
     bool JSONOPTIONS = false;
 
     string filePath = @"C:\TeaTurmoil\config\order.json";
-    
+
     string text;
     #endregion
 
@@ -107,7 +107,9 @@ public class playerEditor : Editor
             EditorGUI.indentLevel++;
             EditorGUILayout.LabelField("Tea Controller", EditorStyles.boldLabel);
             tea = EditorGUILayout.ObjectField(tea, typeof(TeaController), true);
+
             cooking = EditorGUILayout.ObjectField(cooking, typeof(CookingStation), true);
+
             order = EditorGUILayout.ObjectField(order, typeof(ORDER), true);
             EditorGUI.indentLevel--;
         }
@@ -118,24 +120,24 @@ public class playerEditor : Editor
             if (GUILayout.Button("Load JSON"))
             {
 
-               // Load from text file here
-               
+                // Load from text file here
+
                 if (File.Exists(filePath))
                 {
                     text = File.ReadAllText(filePath);
                 }
-                
+
             }
-           
+
 
 
             EditorGUILayout.PrefixLabel("JSON Preview");
 
 
-            text = EditorGUILayout.TextField(text, GUILayout.Height(200) );
+            text = EditorGUILayout.TextField(text, GUILayout.Height(200));
         }
     }
-    
+
 
     /// <summary>
     /// Reset the overlay and update the controller

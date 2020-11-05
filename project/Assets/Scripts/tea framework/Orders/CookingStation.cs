@@ -1,61 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class CookingStation : MonoBehaviour
 {
-    // Class properties
-    #region
-    private List<ingredient> playerInventory = new List<ingredient>();
-    private List<Orders> ordersList = new List<Orders>();
 
-    private List<Orders> cookingList = new List<Orders>();
-    private float totalScore = 0;
+    public List<Orders> orderCheck;
+    public List<ingredient> playerIngredients;
 
-    public TextMeshProUGUI Ordertext;
-    public TextMeshProUGUI stateText;
-    #endregion
+    public TMPro.TextMeshProUGUI textA;
 
-    private string ListToText(List<string> text)
+    private void Start()
     {
-        string result = " ";
-        foreach(var str in text)
-        {
-            result += str.ToString() + "\n";
-
-        }
-        return result;
+        
     }
 
-    public void loadOrder(List<Orders> orders)
+    public void LoadOrder(List<Orders> _orders)
     {
-       // Do UI stuff to display order here
-       
-        ordersList = orders;
+        orderCheck = _orders;
 
     }
+
 
     public bool AcceptIngredient(ingredient ingredient)
     {
-        foreach(var check in ordersList)
+        foreach(var check in orderCheck)
         {
-            foreach (var ingred in check.ingredients)
+            foreach(var ingred in check.ingredients)
             {
                 if (ingredient.name == ingred.name)
                 {
-                   // Debug.Log("Correct");
-                    stateText.text = "Correct";
-                    Ordertext.text += " \n" + " > " + ingred.GetName() + "\n";
+
                     return true;
                 }
-                
             }
         }
-        return false;
 
-       
-        
+        return false;
     }
-  
+
+
 }

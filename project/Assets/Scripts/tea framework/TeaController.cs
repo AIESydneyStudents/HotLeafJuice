@@ -8,7 +8,7 @@ using UnityEngine;
 public class TeaController: MonoBehaviour
 {
     // the main ingredients inventory 
-    public List<ingredient> ingredients = new List<ingredient>();
+    public List<ingredient> ingredients;
 
    
 }
