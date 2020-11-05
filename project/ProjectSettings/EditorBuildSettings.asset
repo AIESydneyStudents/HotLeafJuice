@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/SandBox/O'Neils_SandBox/Main_Menu.unity
     guid: fc437bec750bf5c49ae0fd0ebfd7c6d8
   - enabled: 1
-    path: Assets/SandBox/O'Neils_SandBox/O'Neil's_Scene.unity
+    path: Assets/SandBox/O'Neils_SandBox/UI_TestScene.unity
     guid: bf9d35443cd0bdb4dbb6bb6ae2eb082c
   m_configObjects: {}
