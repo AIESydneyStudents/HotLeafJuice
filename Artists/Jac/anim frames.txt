@@ -1,0 +1,4 @@
+runEmptyHanded: frames 0 - 16
+idleFrantic: frames 20 - 44
+runHolding: frames 52 - 68
+placeObject: frames 74 - 86
