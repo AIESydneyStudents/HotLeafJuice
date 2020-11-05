@@ -73,9 +73,7 @@ public class Timer
 
 
 
-public static class JSON_HELPER
-{
-} 
+
 
 /// <summary>
 /// Custom order object to store infomation that is generated via the order editor tool
@@ -143,8 +141,5 @@ public class Orders
     {
         Debug.Log("Invoke Import");
     }
-
-    
-
 
 }

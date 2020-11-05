@@ -100,15 +100,11 @@ public class playerController : MonoBehaviour
         // Pick up objects
         if (Input.GetKeyDown(InteractionKeybinding) || Input.GetButtonDown("Fire1"))
         {
-            InteractionController.inventoryText.text = " ";
-
-            cookingStationController.Ordertext.text = " ";
-
+          
             InteractionController.PickupObject(
                 MovementController.playerAgent,
                 teaController.ingredients );
-                        
-        
+
         }
         // Show menu
         if (Input.GetKeyDown(MenuKeybinding))
@@ -118,8 +114,7 @@ public class playerController : MonoBehaviour
         // Place objects down
         if (Input.GetKeyDown(PlaceObjectKeybinding) || Input.GetButtonDown("Fire2"))
         {
-            InteractionController.inventoryText.text = " ";
-            cookingStationController.Ordertext.text = " ";
+            
 
             Collider[] hitColliders = Physics.OverlapSphere(
 

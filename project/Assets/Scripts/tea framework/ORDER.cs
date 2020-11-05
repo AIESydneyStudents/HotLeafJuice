@@ -10,20 +10,29 @@ using System;
 /// </summary>
 public class ORDER : MonoBehaviour
 {
+    
+    [Header("Config Order Infomation")]
     public string CONFIG_FILEPATH = @"C:\TeaTurmoil\config\order.json";
     #region Class Variables
-
-    [SerializeField] UnityEngine.UI.Slider slider;
-    [SerializeField] float timerTime;
     [SerializeField] private Spawner spawner;
+    [SerializeField] UnityEngine.UI.Slider timerElement;
+
+   
+    [Header("Timer Settings")]
+    [SerializeField] float timerTime;
+    
+    
     private List<Orders> level1 = new List<Orders>();
     private List<Orders> level2 = new List<Orders>();
     private List<Orders> level3 = new List<Orders>();
     private string orderName;
     private int orderScore;
     private bool completed;
-
+    private float time;
     private Timer timer;
+ 
+
+    [Header("Order Editor")]
     [SerializeField] List<npcOrders> Orders;
     private System.Random rand;
     #endregion
@@ -36,11 +45,9 @@ public class ORDER : MonoBehaviour
     private bool orderStart = false;
     private string jsonexport = " ";
     //public bool disableEditor;
+    
 
-
-    /// <summary>
-    /// Order struct: stores all nessessary info that is gathered in editor
-    /// </summary>
+    
     [System.Serializable]
     struct npcOrders
     {
@@ -59,15 +66,19 @@ public class ORDER : MonoBehaviour
     {
         public string npc_name;
         [Range(1, 3)] public int difficultyLevel;
-
         public Mesh headMesh;
     }
+    
+    
+    [Header("NPC Editor")]
+    public bool npcSpawnEnabled;
+
+    [Tooltip("Spawn Timer for NPC (Seconds)")]
+    public float spawnTimer;
 
     public List<npcEditor> NPC_Editor;
+    
     private List<NPC> MainNPCsList = new List<NPC>();
-
-
-
     [HideInInspector]
     public List<Orders> orderList = new List<Orders>();
 
@@ -94,6 +105,7 @@ public class ORDER : MonoBehaviour
                 PleaseLetItEnd.ingredients,
                 PleaseLetItEnd.orderTimer,
                 PleaseLetItEnd.diffLevel);
+
             orderList.Add(order);
         }
 
@@ -106,24 +118,34 @@ public class ORDER : MonoBehaviour
                 npc.npc_name,
                 spawner.transform
                 );
-            newnpc.SetType(npc.headMesh, npc.difficultyLevel);
+
+            newnpc.SetType(
+                npc.headMesh, 
+                npc.difficultyLevel);
+
             newnpc.orderForNPC = getOrder(npc.difficultyLevel);
+
             MainNPCsList.Add(newnpc);
+
+
 
         }
 
         foreach (var npc in MainNPCsList)
         {
-            Debug.Log(npc.orderForNPC.diffLevel);
+            Debug.Log(npc.orderForNPC.diffLevel + " " + npc.orderForNPC.name + "FOR NPC" + npc.npcName);
         }
 
 
-
+        spawner.Set(MainNPCsList); // assign the spawner the new NPCS
 
         if (exportJSON == true)
         {
             ExportJSON("");
         }
+
+
+
 
         timer = new Timer(timerTime); // create new timer object
     }
@@ -134,14 +156,14 @@ public class ORDER : MonoBehaviour
     /// <param name="time"></param>
     private void DisplayUpdate(float time)
     {
-        slider.value = time;
-        if (slider.value <= 30)
+        timerElement.value = time;
+        if (timerElement.value <= 30)
         {
 
         }
-        if (slider.value <= 10)
+        if (timerElement.value <= 10)
         {
-            slider.image.color = Color.red;
+            timerElement.image.color = Color.red;
         }
     }
 
@@ -157,14 +179,21 @@ public class ORDER : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        //if (orderStart == true)
-        //{
-        //    timer.StartTimer(timerTime);
 
-        //    orderStart = false;
-        //}
-        //timer.Update();
-        // Debug.Log(timer.timeRemaining);
+        time += 1 * Time.deltaTime;
+
+       // Debug.Log(time);
+
+        if (time >= spawnTimer)
+        {
+            if (npcSpawnEnabled == true)
+            {
+                spawner.Spawn();
+                time = 0;
+            }
+        }
+
+
     }
 
 
