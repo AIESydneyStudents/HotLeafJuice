@@ -57,6 +57,14 @@ public class player_movement : MonoBehaviour
 
     public void ControllerMovement(float dt)
     {
+
+
+        float heading = Mathf.Atan2(-Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        playerAgent.gameObject.transform.rotation = Quaternion.Euler(0f, (-heading * Mathf.Rad2Deg), 0f);
+
+
+
+
         xPos = Input.GetAxis("Horizontal");
         zPos = Input.GetAxis("Vertical");
 

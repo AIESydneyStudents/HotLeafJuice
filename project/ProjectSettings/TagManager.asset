@@ -9,6 +9,7 @@ TagManager:
   - bench
   - Cooking Station
   - bin
+  - counter
   layers:
   - Default
   - TransparentFX

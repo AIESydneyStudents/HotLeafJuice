@@ -79,6 +79,7 @@ public class ORDER : MonoBehaviour
     public List<npcEditor> NPC_Editor;
     
     private List<NPC> MainNPCsList = new List<NPC>();
+
     [HideInInspector]
     public List<Orders> orderList = new List<Orders>();
 

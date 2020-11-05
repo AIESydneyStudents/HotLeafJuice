@@ -59,12 +59,10 @@ public class playerController : MonoBehaviour
 
     public TeaController teaController;
 
-    public List<ingredient> ingredients;
+    public List<ingredient> ingredients = new List<ingredient>();
 
     public CookingStation cookingStationController;
 
-  
-   
     public ORDER ORDER;
     #endregion
    
@@ -78,17 +76,14 @@ public class playerController : MonoBehaviour
         ConfigInteractionController();
         cameraController.InitCamera();
 
-       
-        StartLevel();
+        cookingStationController.loadOrder(ORDER.orderList);
+        
         
     }
      /// <summary>
      /// Load needed variables
      /// </summary>
-    void StartLevel()
-    {       
-        cookingStationController.loadOrder(ORDER.orderList);
-    }  
+  
 
     /// <summary>
     /// Called once per frame
@@ -119,14 +114,16 @@ public class playerController : MonoBehaviour
             Collider[] hitColliders = Physics.OverlapSphere(
 
                 MovementController.playerAgent.gameObject.transform.position, 
-                0.3f);
+
+                0.7f);
+
 
             foreach (var col in hitColliders)
             {
                 
                 if (col.gameObject.tag == "bench")
                 {
-
+                    Debug.Log("Trigger");
                     bench bench = col.gameObject.GetComponent<bench>();
 
                     if (bench.isUsed == false)

@@ -20,5 +20,5 @@ public class scriptableNPC : MonoBehaviour
     }
 
 
-    // 632042
+   
 }

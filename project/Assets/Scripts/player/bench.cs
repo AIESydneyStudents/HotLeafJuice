@@ -5,7 +5,7 @@ using UnityEngine;
 public class bench : MonoBehaviour
 {
     public bool isUsed;
-    private List<GameObject> objects;
+    private List<GameObject> objects = new List<GameObject>();
     bench()
     {
         
