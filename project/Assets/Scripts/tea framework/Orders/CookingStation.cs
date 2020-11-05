@@ -7,7 +7,6 @@ public class CookingStation : MonoBehaviour
 
     public List<Orders> orderCheck;
     public List<ingredient> playerIngredients;
-
     public TMPro.TextMeshProUGUI textA;
 
     private void Start()

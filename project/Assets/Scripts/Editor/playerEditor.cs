@@ -21,6 +21,9 @@ public class playerEditor : Editor
     bool interactionShow = true;
     bool teaShow = true;
     bool JSONOPTIONS = false;
+    bool showThing1 = false;
+
+    float option = 0f;
 
     string filePath = @"C:\TeaTurmoil\config\order.json";
 
@@ -49,6 +52,15 @@ public class playerEditor : Editor
         // Open the script as an object
         var controller = target as playerController;
 
+
+        showThing1 = EditorGUILayout.BeginToggleGroup("Enable Option", showThing1);
+        
+        option = EditorGUILayout.FloatField("Thing", option);
+
+        EditorGUILayout.EndToggleGroup();
+
+       
+
         movementShow = EditorGUILayout.Foldout(movementShow, "Movement Settings");
         if (movementShow)
         {
@@ -67,7 +79,7 @@ public class playerEditor : Editor
         if (cameraShow)
         {
             EditorGUI.indentLevel++;
-
+            
             EditorGUILayout.LabelField("Camera Controller", EditorStyles.boldLabel);
 
             camera = EditorGUILayout.ObjectField(camera, typeof(camerafollow), true);
@@ -113,6 +125,9 @@ public class playerEditor : Editor
             order = EditorGUILayout.ObjectField(order, typeof(ORDER), true);
             EditorGUI.indentLevel--;
         }
+
+
+
 
         JSONOPTIONS = EditorGUILayout.Foldout(JSONOPTIONS, "JSON Options");
         if (JSONOPTIONS)
