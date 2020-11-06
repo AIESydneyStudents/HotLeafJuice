@@ -1138,7 +1138,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 0.8, y: 2, z: 0.8}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &399716601
 NavMeshAgent:
@@ -1149,8 +1149,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 399716599}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 2.5
+  m_Radius: 0.4
+  m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   PlaceObjectKeybinding: 118
   teaController: {fileID: 1925143549}
   ingredients: []
-  cookingStationController: {fileID: 0}
+  CookingStation: {fileID: 0}
   ORDER: {fileID: 0}
 --- !u!4 &399716603
 Transform:
@@ -4138,12 +4138,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6bacb673187d5ae418340d727641f6b5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6bacb673187d5ae418340d727641f6b5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6bacb673187d5ae418340d727641f6b5,
         type: 3}
@@ -4158,7 +4158,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6bacb673187d5ae418340d727641f6b5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6bacb673187d5ae418340d727641f6b5,
         type: 3}
@@ -6897,11 +6897,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CONFIG_FILEPATH: C:\TeaTurmoil\config\order.json
-  slider: {fileID: 0}
-  timerTime: 0
   spawner: {fileID: 0}
+  timerElement: {fileID: 0}
+  timerTime: 0
   Orders: []
   exportJSON: 0
+  npcSpawnEnabled: 0
+  spawnTimer: 0
   NPC_Editor: []
   orderList: []
 --- !u!114 &1925143549
