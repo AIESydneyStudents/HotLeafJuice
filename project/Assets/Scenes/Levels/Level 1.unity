@@ -244,6 +244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PlateStack
       objectReference: {fileID: 0}
+    - target: {fileID: -646973865766562797, guid: aca77e9a4d6f26f4ebee930d80bb794b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7760c3548091a654986d18c0b931ee42, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca77e9a4d6f26f4ebee930d80bb794b, type: 3}
 --- !u!1001 &38714387
@@ -11361,6 +11366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_PlateStack (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -646973865766562797, guid: aca77e9a4d6f26f4ebee930d80bb794b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7760c3548091a654986d18c0b931ee42, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aca77e9a4d6f26f4ebee930d80bb794b, type: 3}
 --- !u!1001 &2007292659
