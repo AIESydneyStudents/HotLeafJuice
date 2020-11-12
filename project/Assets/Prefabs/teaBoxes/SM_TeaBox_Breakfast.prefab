@@ -91,7 +91,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e98bc56cf4f0afa4481d3b9b80c14e8a, type: 2}
+  - {fileID: 2100000, guid: e3ef5a7effc1c7742b6fb04042bd5bf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1251,7 +1251,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e98bc56cf4f0afa4481d3b9b80c14e8a, type: 2}
+  - {fileID: 2100000, guid: e3ef5a7effc1c7742b6fb04042bd5bf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1282,7 +1282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6485061838394081240}
   m_Layer: 0
-  m_Name: SM_TeaBox (2)
+  m_Name: SM_TeaBox_Breakfast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
