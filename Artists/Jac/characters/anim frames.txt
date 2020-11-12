@@ -2,3 +2,4 @@ runEmptyHanded: frames 0 - 16
 idle: frames 25 - 49
 runHolding: frames 60 - 76
 placeObject: frames 90 - 106
+idleHolding: frames 120 - 144
