@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1688391606674251218
+--- !u!1 &2004938655669183133
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2392826337938583489}
+  - component: {fileID: 3281330606919291022}
+  - component: {fileID: 4565218244248847999}
+  - component: {fileID: 8932818420234109564}
   m_Layer: 0
   m_Name: SM_Flip_Door
   m_TagString: Untagged
@@ -16,24 +18,53 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2392826337938583489
+--- !u!4 &3281330606919291022
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688391606674251218}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.093076, y: -6.5663165e-17, z: 4.0486474}
+  m_GameObject: {fileID: 2004938655669183133}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 7, y: -7.0961356e-17, z: 4}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
-  - {fileID: 7772434934708965049}
-  - {fileID: 202066438003198312}
-  - {fileID: 4258569229585681536}
+  - {fileID: 7449404899942969846}
+  - {fileID: 1040688270955525671}
+  - {fileID: 4009852987052700623}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3063406264110526874
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &4565218244248847999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004938655669183133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100, z: 100}
+  m_Center: {x: 0, y: 50, z: 0}
+--- !u!208 &8932818420234109564
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004938655669183133}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!1 &2756134703798816469
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,9 +72,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 202066438003198312}
-  - component: {fileID: 721368198842623157}
-  - component: {fileID: 7972144956753024797}
+  - component: {fileID: 1040688270955525671}
+  - component: {fileID: 485956252896762874}
+  - component: {fileID: 7070116729109751890}
   m_Layer: 0
   m_Name: cafe_flip_door_hinge
   m_TagString: Untagged
@@ -51,35 +82,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &202066438003198312
+--- !u!4 &1040688270955525671
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3063406264110526874}
+  m_GameObject: {fileID: 2756134703798816469}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 98.47905, z: -45.7714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2392826337938583489}
+  m_Father: {fileID: 3281330606919291022}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &721368198842623157
+--- !u!33 &485956252896762874
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3063406264110526874}
+  m_GameObject: {fileID: 2756134703798816469}
   m_Mesh: {fileID: 2041551322955220667, guid: ae2e52c063bd519409652349ba2b4b5a, type: 3}
---- !u!23 &7972144956753024797
+--- !u!23 &7070116729109751890
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3063406264110526874}
+  m_GameObject: {fileID: 2756134703798816469}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -112,7 +143,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &3602964198861934546
+--- !u!1 &4520746461034459293
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,9 +151,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7772434934708965049}
-  - component: {fileID: 327260101195634696}
-  - component: {fileID: 4026861231533893067}
+  - component: {fileID: 7449404899942969846}
+  - component: {fileID: 591677414130657095}
+  - component: {fileID: 4278119313356036740}
   m_Layer: 0
   m_Name: cafe_flip_door 1
   m_TagString: Untagged
@@ -130,35 +161,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7772434934708965049
+--- !u!4 &7449404899942969846
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3602964198861934546}
+  m_GameObject: {fileID: 4520746461034459293}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 100, z: -46.204876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2392826337938583489}
+  m_Father: {fileID: 3281330606919291022}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &327260101195634696
+--- !u!33 &591677414130657095
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3602964198861934546}
+  m_GameObject: {fileID: 4520746461034459293}
   m_Mesh: {fileID: 5713612680466755110, guid: ae2e52c063bd519409652349ba2b4b5a, type: 3}
---- !u!23 &4026861231533893067
+--- !u!23 &4278119313356036740
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3602964198861934546}
+  m_GameObject: {fileID: 4520746461034459293}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -191,7 +222,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &5937131020197100540
+--- !u!1 &6834295008665879731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,9 +230,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4258569229585681536}
-  - component: {fileID: 436279504655700396}
-  - component: {fileID: 7048621861207498654}
+  - component: {fileID: 4009852987052700623}
+  - component: {fileID: 770502327273844451}
+  - component: {fileID: 7884987187129671889}
   m_Layer: 0
   m_Name: cafe_flip_door_stop
   m_TagString: Untagged
@@ -209,35 +240,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4258569229585681536
+--- !u!4 &4009852987052700623
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5937131020197100540}
+  m_GameObject: {fileID: 6834295008665879731}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 90.471, z: 49.97854}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2392826337938583489}
+  m_Father: {fileID: 3281330606919291022}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &436279504655700396
+--- !u!33 &770502327273844451
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5937131020197100540}
+  m_GameObject: {fileID: 6834295008665879731}
   m_Mesh: {fileID: 6786677041109649500, guid: ae2e52c063bd519409652349ba2b4b5a, type: 3}
---- !u!23 &7048621861207498654
+--- !u!23 &7884987187129671889
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5937131020197100540}
+  m_GameObject: {fileID: 6834295008665879731}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
