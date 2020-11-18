@@ -5,10 +5,10 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: walk
+    second: NPCwalk
   - first:
       74: -5252816984213320552
-    second: idle
+    second: NPCidle
   - first:
       74: 6600346154160954090
     second: place
@@ -17,7 +17,13 @@ ModelImporter:
     second: happy
   - first:
       74: -686808503254401153
-    second: angry
+    second: NPCangry
+  - first:
+      74: 7049818510047963618
+    second: NPCplace
+  - first:
+      74: 8651140877696166191
+    second: NPChappy
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -47,7 +53,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
+      name: NPCwalk
       takeName: Take 001
       internalID: 0
       firstFrame: 155
@@ -76,7 +82,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: idle
+      name: NPCidle
       takeName: Take 001
       internalID: 0
       firstFrame: 186
@@ -105,7 +111,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: place
+      name: NPCplace
       takeName: Take 001
       internalID: 0
       firstFrame: 240
@@ -134,7 +140,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: happy
+      name: NPChappy
       takeName: Take 001
       internalID: 0
       firstFrame: 300
@@ -163,7 +169,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: angry
+      name: NPCangry
       takeName: Take 001
       internalID: 0
       firstFrame: 360
