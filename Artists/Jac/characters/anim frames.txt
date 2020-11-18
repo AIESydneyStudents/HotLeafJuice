@@ -5,4 +5,5 @@ placeObject: frames 90 - 106
 idleHolding: frames 120 - 144
 NPCwalk: frames 155 - 178
 NPCidle: frames 186 - 226
-NPCplace: frames 240 - 
+NPCplace: frames 240 - 287
+NPChappy: frames 300 - 343
