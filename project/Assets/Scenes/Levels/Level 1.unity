@@ -943,8 +943,8 @@ Transform:
   - {fileID: 2076324096}
   - {fileID: 653827036}
   - {fileID: 787874757}
-  - {fileID: 1402463239}
   - {fileID: 2028783691}
+  - {fileID: 1402463239}
   - {fileID: 1644454705}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2767,7 +2767,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
