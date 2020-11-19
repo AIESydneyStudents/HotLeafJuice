@@ -10,6 +10,9 @@ TagManager:
   - Cooking Station
   - bin
   - counter
+  - pile
+  - cup
+  - kettle
   layers:
   - Default
   - TransparentFX
