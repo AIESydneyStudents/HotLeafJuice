@@ -37,9 +37,9 @@ public class playerController : MonoBehaviour
     private float count = 0;
 
     [Header("Tea Settings")]
-    [SerializeField] private TeaController teaController;
+    //[SerializeField] private TeaController teaController;
     [HideInInspector] public List<ingredient> ingredients = new List<ingredient>();
-    [SerializeField] private CookingStation CookingStation;
+   // [SerializeField] private CookingStation CookingStation;
 
     [Header("NPC Settings")]
     [SerializeField] private float SpawnTimer;
@@ -130,7 +130,7 @@ public class playerController : MonoBehaviour
         Spawner.Set(mainNPCList);
         timeLeft = 0;
       //  cup.LoadOrder(orderList);
-        CookingStation.LoadOrder(orderList);
+       // CookingStation.LoadOrder(orderList);
         random = new System.Random();
 
     }
