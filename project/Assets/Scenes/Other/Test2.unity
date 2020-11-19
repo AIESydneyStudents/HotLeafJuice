@@ -3745,20 +3745,25 @@ MonoBehaviour:
   timerText: {fileID: 0}
   timerLength: 0
   cameraLock: 0
-  cameraController: {fileID: 0}
-  playerCamera: {fileID: 0}
+  cameraController: {fileID: 158273332}
+  playerCamera: {fileID: 2039121389}
   cameraSpeed: 0
   moveRange: 0
-  playerTransform: {fileID: 0}
-  pickupRange: 0
-  pickupTags: []
-  inventorySizeLimit: 0
-  teaController: {fileID: 0}
+  playerTransform: {fileID: 940367826}
+  pickupRange: 2
+  pickupTags:
+  - kettle
+  - pile
+  - tea leaves
+  inventorySizeLimit: 1
   ingredients: []
-  CookingStation: {fileID: 0}
-  SpawnTimer: 0
+  SpawnTimer: 60
   Spawner: {fileID: 0}
-  npceditor: []
+  npceditor:
+  - name: Tea man
+    difficultyLevel: 2
+    spawnLocation: {fileID: 0}
+    headMesh: {fileID: 0}
   orderTimer: 0
   filePath: C:\TeaTurmoil\config\order.json
   Orders: []
@@ -7276,6 +7281,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1688714518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1688714520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 6bacb673187d5ae418340d727641f6b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1688714518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1688714521
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688714520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3472b8dc61331047bf41284edc3935f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1698326468
 PrefabInstance:
   m_ObjectHideFlags: 0
