@@ -349,6 +349,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bench_Floating (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4019618442830845622, guid: 69e5fadd891654f45af98f836cd7f926,
+        type: 3}
+      propertyPath: isUsed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e5fadd891654f45af98f836cd7f926, type: 3}
 --- !u!4 &28615814 stripped
@@ -3010,6 +3015,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bench_Floating (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4019618442830845622, guid: 69e5fadd891654f45af98f836cd7f926,
+        type: 3}
+      propertyPath: isUsed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e5fadd891654f45af98f836cd7f926, type: 3}
 --- !u!4 &717172020 stripped
@@ -3942,6 +3952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Bench_Floating (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019618442830845622, guid: 69e5fadd891654f45af98f836cd7f926,
+        type: 3}
+      propertyPath: isUsed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e5fadd891654f45af98f836cd7f926, type: 3}
@@ -6743,6 +6758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Bench_Floating (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019618442830845622, guid: 69e5fadd891654f45af98f836cd7f926,
+        type: 3}
+      propertyPath: isUsed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69e5fadd891654f45af98f836cd7f926, type: 3}
