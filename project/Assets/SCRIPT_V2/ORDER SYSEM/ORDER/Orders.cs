@@ -103,10 +103,7 @@ public class Orders
     private int ReturnScore()
     {
         int totalScore = 0;
-        foreach (var ingred in ingredients)
-        {
-            totalScore += ingred.GetScoreNumber();
-        }
+        
         return totalScore;
     }
 
