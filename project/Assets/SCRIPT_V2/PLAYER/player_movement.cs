@@ -31,10 +31,11 @@ public class player_movement : MonoBehaviour
 
 
         float heading = Mathf.Atan2(-Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        
         playerAgent.gameObject.transform.rotation = Quaternion.Euler(0f, (-heading * Mathf.Rad2Deg), 0f);
 
-
-
+        Debug.Log(playerAgent.gameObject.transform.rotation);
+        
 
         xPos = Input.GetAxis("Horizontal");
         zPos = Input.GetAxis("Vertical");

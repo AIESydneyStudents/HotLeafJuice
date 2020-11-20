@@ -6,8 +6,8 @@ public class kettle : MonoBehaviour
 {
 
     [SerializeField] private TMPro.TextMeshProUGUI kettleText;
-    [SerializeField] private GameObject warmTempSprite;
-    [SerializeField] private GameObject hotTempSprite;
+    [SerializeField] public GameObject warmTempSprite;
+    [SerializeField] public GameObject hotTempSprite;
 
     [SerializeField] public water water;
     [HideInInspector] public Water Water = new Water();

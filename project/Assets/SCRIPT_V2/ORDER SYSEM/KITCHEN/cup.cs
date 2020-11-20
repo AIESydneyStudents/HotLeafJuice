@@ -20,7 +20,7 @@ public class cup : MonoBehaviour
     {
         foreach(var b in orderCheck)
         {
-            if(inCup.Count == b.ingredients.Count)
+            if(inCup.Count == b.ingredients.Count - 1)
             {
                 gameObject.SetActive(false);
                 return true;

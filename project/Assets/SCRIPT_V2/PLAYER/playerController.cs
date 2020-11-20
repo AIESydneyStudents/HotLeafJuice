@@ -156,8 +156,6 @@ public class playerController : MonoBehaviour
         }
 
         
-
-
         if (kettlePlaced.Count >= 1)
         {
             foreach (var kettle in kettlePlaced)
@@ -226,23 +224,29 @@ public class playerController : MonoBehaviour
             {
                 if (col.gameObject.CompareTag("cup"))
                 {
+                
                     cup cup = col.gameObject.GetComponent<cup>();
                     cup.LoadOrder(orderList);
 
 
                     if(cup.CheckOrder() == true)
                     {
-                        
+                        foreach(var npc in Spawner.toMove)
+                        {
+                            npc.
+                        }
                         cup.gameObject.SetActive(false);
                     }
 
                     if(HoldingKettle == true)
                     {
                         kettle kettle = kettleInventory.First();
-
+                        kettle.hotTempSprite.SetActive(false);
                         if (cup.addIngredient(kettle.water) && kettle.Water.amount > 0)
                         {
                             kettle.Water.amount = 0;
+                            kettle.warmTempSprite.SetActive(true);
+                            
                             kettle.water.hotWater = false;
                         }
                     }

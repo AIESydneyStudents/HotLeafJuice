@@ -10,8 +10,8 @@ public class Spawner : MonoBehaviour
     public GameObject target;
     public Transform spawnLocation;
     public Transform leaveLocation;
-    private List<NPC> npcList = new List<NPC>();
-    private List<GameObject> toMove = new List<GameObject>();
+    public List<NPC> npcList = new List<NPC>();
+    public List<GameObject> toMove = new List<GameObject>();
    
   
     // Start is called before the first frame update
