@@ -6,11 +6,14 @@ public class kettle : MonoBehaviour
 {
 
     [SerializeField] private TMPro.TextMeshProUGUI kettleText;
+    [SerializeField] private GameObject warmTempSprite;
+    [SerializeField] private GameObject hotTempSprite;
 
     [SerializeField] public water water;
     [HideInInspector] public Water Water = new Water();
     [HideInInspector] public bool isBoilingWater = false;
     [HideInInspector] public bool isCooling = false;
+
 
     public void HeatWater()
     {
@@ -30,6 +33,7 @@ public class kettle : MonoBehaviour
 
         if (Water.temp >= 100)
         {
+            
             return true;
         }
         
@@ -41,9 +45,12 @@ public class kettle : MonoBehaviour
 
         if (Water.temp >= maxTemp)
         {
-            
+            hotTempSprite.SetActive(true);
+            warmTempSprite.SetActive(false);
             return true;
         }
+        hotTempSprite.SetActive(false);
+        warmTempSprite.SetActive(true);
         return false;
        
     }

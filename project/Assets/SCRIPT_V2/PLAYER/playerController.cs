@@ -169,7 +169,7 @@ public class playerController : MonoBehaviour
                     kettle.HeatWater();
 
                     // Hot water update
-                    if(kettle.isBoiling(20) == true)
+                    if(kettle.isBoiling(10) == true)
                     {
                         kettle.water.hotWater = true;
                         kettle.water.warmWater = false;
@@ -177,12 +177,7 @@ public class playerController : MonoBehaviour
                         kettle.isBoilingWater = false;
                         return;
                     }
-                    // Warm water update
-                    if(kettle.isBoiling(10) == true)
-                    {
-                        kettle.water.warmWater = true;
-                        kettle.water.hotWater = false;
-                    }
+                    
 
                 }
 
@@ -237,7 +232,7 @@ public class playerController : MonoBehaviour
 
                     if(cup.CheckOrder() == true)
                     {
-
+                        
                         cup.gameObject.SetActive(false);
                     }
 

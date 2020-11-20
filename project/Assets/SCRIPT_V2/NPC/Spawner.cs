@@ -6,12 +6,13 @@ using UnityEngine.AI;
 public class Spawner : MonoBehaviour
 {
     public NavMeshAgent NPC;
+    [SerializeField] private GameObject recieveTexture;
     public GameObject target;
     public Transform spawnLocation;
     public Transform leaveLocation;
     private List<NPC> npcList = new List<NPC>();
     private List<GameObject> toMove = new List<GameObject>();
-    [SerializeField] private TMPro.TextMeshProUGUI text;
+   
   
     // Start is called before the first frame update
     public void Spawn()
@@ -60,13 +61,9 @@ public class Spawner : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere( npc.gameObject.transform.position, 1f);
             foreach(var col in colliders)
             {
-                if (col.gameObject.tag == "Register")
+                if (col.gameObject.tag == "cup")
                 {
-                    text.text = placedNPC.order.name.ToString() + "\n";                  
-                    foreach (var bbbb in placedNPC.order.ingredients)
-                    {
-                        text.text += bbbb.Objectname + " \n" ;
-                    }                
+                    recieveTexture.SetActive(true);                
                 }
             }
         }

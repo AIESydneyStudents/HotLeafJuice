@@ -22,6 +22,7 @@ public class cup : MonoBehaviour
         {
             if(inCup.Count == b.ingredients.Count)
             {
+                gameObject.SetActive(false);
                 return true;
             }
         }
@@ -36,6 +37,10 @@ public class cup : MonoBehaviour
             {
                 if (ingredient.name == ingred.name)
                 {
+                    GameObject @object = ingredient.ingredient_sprite;
+
+                    @object.SetActive(false);
+
                     inCup.Add(ingredient);
                     return true;
                 }

@@ -14,7 +14,10 @@ public class ingredient : MonoBehaviour
     /// Class properties
     /// </summary>
     #region
+    public GameObject ingredient_sprite;
+   
     public string Objectname;
+
     protected int scoreNumber;
     #endregion
 
