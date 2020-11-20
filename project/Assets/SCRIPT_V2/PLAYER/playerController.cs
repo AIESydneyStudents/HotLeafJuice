@@ -231,10 +231,7 @@ public class playerController : MonoBehaviour
 
                     if(cup.CheckOrder() == true)
                     {
-                        foreach(var npc in Spawner.toMove)
-                        {
-                            npc.
-                        }
+                        
                         cup.gameObject.SetActive(false);
                     }
 

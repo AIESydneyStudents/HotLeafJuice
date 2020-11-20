@@ -54,8 +54,6 @@ public class Spawner : MonoBehaviour
 
         foreach (var npc in toMove)
         {
-
-
             npc.GetComponent<NavMeshAgent>().SetDestination(target.gameObject.transform.position);
             scriptableNPC placedNPC = npc.GetComponent<scriptableNPC>();
             Collider[] colliders = Physics.OverlapSphere( npc.gameObject.transform.position, 1f);

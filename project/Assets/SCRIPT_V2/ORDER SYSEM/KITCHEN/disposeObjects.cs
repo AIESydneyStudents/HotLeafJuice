@@ -21,7 +21,7 @@ public class disposeObjects : MonoBehaviour
     public void bin(ingredient objectTo)
     {
 
-        Destroy(objectTo.gameObject);
+        objectTo.gameObject.SetActive(false);
 
     }
 
