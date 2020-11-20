@@ -8015,6 +8015,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Head_Chinese_1_full
       objectReference: {fileID: 0}
+    - target: {fileID: 433758204462506818, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c42d43d50ae16a64695deea97a883db3, type: 2}
     - target: {fileID: 2306122101393003079, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
         type: 3}
       propertyPath: m_LocalPosition.z
