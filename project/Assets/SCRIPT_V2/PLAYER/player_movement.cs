@@ -11,20 +11,7 @@ public class player_movement : MonoBehaviour
     private float zPos = 0;
     private float xPos = 0;
   
-    public void PointToMove(Camera playerCamera)
-    {
-        if (Input.GetMouseButton(0))
-        {
-            RaycastHit hit;
-
-            if (Physics.Raycast(playerCamera.ScreenPointToRay(Input.mousePosition), out hit, 100))
-            {
-
-                playerAgent.destination = hit.point;
-            
-            }
-        }
-    }  
+     
 
     public float ClampAngle(float angle, float min, float max)
     {
