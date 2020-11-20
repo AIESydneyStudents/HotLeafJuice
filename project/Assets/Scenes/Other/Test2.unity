@@ -2218,6 +2218,7 @@ MonoBehaviour:
   target: {fileID: 1755591174}
   spawnLocation: {fileID: 341644775}
   leaveLocation: {fileID: 0}
+  toMove: []
 --- !u!4 &341644775
 Transform:
   m_ObjectHideFlags: 0
@@ -5523,7 +5524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 1404122021}
-  movement_speed: 2.3
+  movement_speed: 3.2
   headAnchor: {fileID: 154049615}
   timerText: {fileID: 0}
   timerLength: 2.3
