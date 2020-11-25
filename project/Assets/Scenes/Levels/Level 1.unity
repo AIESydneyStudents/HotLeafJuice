@@ -6045,6 +6045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1082994031}
+  - component: {fileID: 1082994032}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Untagged
@@ -6067,6 +6068,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082994032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082994030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d86cbd0c4770e489d0387eef7077e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  movement_speed: 0
+  headAnchor: {fileID: 0}
+  timerText: {fileID: 0}
+  timerLength: 0
+  cameraLock: 0
+  cameraController: {fileID: 0}
+  playerCamera: {fileID: 0}
+  cameraSpeed: 0
+  moveRange: 0
+  playerTransform: {fileID: 0}
+  pickupRange: 0
+  pickupTags: []
+  inventorySizeLimit: 0
+  ingredients: []
+  SpawnTimer: 0
+  Spawner: {fileID: 0}
+  npceditor: []
+  orderTimer: 0
+  filePath: C:\TeaTurmoil\config\order.json
+  Orders: []
+  orderList: []
 --- !u!1001 &1104850326
 PrefabInstance:
   m_ObjectHideFlags: 0
