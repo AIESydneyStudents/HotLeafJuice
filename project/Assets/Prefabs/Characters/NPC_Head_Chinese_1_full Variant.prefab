@@ -88,16 +88,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b1e2620b38e2a941a9dfa0d0a60f9c0, type: 2}
+    - target: {fileID: -1111441723975574587, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f784cbbaa74d63c41ba784542883213a, type: 2}
     - target: {fileID: -927199367670048503, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
         type: 3}
       propertyPath: m_Name
-      value: NPC_Head_Chinese_1_full
+      value: NPC_Head_Chinese_1_full Variant
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
         type: 3}
       propertyPath: m_TagString
       value: cup
       objectReference: {fileID: 0}
+    - target: {fileID: 433758204462506818, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78e9409aa5e0dfe4d81dd8bbe6330a16, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 878bd3fd09f6b5d47bd77a61fb9b3cfd, type: 3}
 --- !u!1 &8487909459354723856 stripped
