@@ -47,13 +47,28 @@ public class Spawner : MonoBehaviour
 
     }
 
+    public List<GameObject> GetNPCs()
+    {
+        return toMove;
+    }
 
-   
+    public void SetNPCs(List<GameObject> objects)
+    {
+        toMove = objects;
+    }
+ 
     private void Update()
     {
 
         foreach (var npc in toMove)
         {
+
+            if(npc.GetComponent<scriptableNPC>().isDone == true)
+            {
+                npc.SetActive(false);
+            }
+
+
             npc.GetComponent<NavMeshAgent>().SetDestination(target.gameObject.transform.position);
             scriptableNPC placedNPC = npc.GetComponent<scriptableNPC>();
             Collider[] colliders = Physics.OverlapSphere( npc.gameObject.transform.position, 1f);
@@ -61,7 +76,10 @@ public class Spawner : MonoBehaviour
             {
                 if (col.gameObject.tag == "cup")
                 {
-                    recieveTexture.SetActive(true);                
+                    recieveTexture.SetActive(true);
+
+                   
+                    
                 }
             }
         }

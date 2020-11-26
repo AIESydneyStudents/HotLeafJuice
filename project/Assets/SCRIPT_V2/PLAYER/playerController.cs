@@ -34,6 +34,8 @@ public class playerController : MonoBehaviour
     [SerializeField] private float pickupRange;
     [SerializeField] private List<string> pickupTags = new List<string>();
     [SerializeField] private float inventorySizeLimit;
+    [SerializeField] private cupSpawner cupSpawner;
+    [SerializeField] private Transform CupTransform;
     private float count = 0;
 
     [Header("Tea Settings")]
@@ -129,8 +131,7 @@ public class playerController : MonoBehaviour
 
         Spawner.Set(mainNPCList);
         timeLeft = 0;
-      //  cup.LoadOrder(orderList);
-       // CookingStation.LoadOrder(orderList);
+     
         random = new System.Random();
 
     }
@@ -209,6 +210,7 @@ public class playerController : MonoBehaviour
                         {
                             PickupKettle(collider);
                         }
+                        
                     }
                 }
             }
@@ -227,11 +229,28 @@ public class playerController : MonoBehaviour
                 
                     cup cup = col.gameObject.GetComponent<cup>();
                     cup.LoadOrder(orderList);
-
+                 //   cup.LoadSprites();
 
                     if(cup.CheckOrder() == true)
                     {
-                        
+                        List<GameObject> npc = Spawner.GetNPCs();
+
+
+                        foreach(var n in npc)
+                        {
+                            n.GetComponent<scriptableNPC>().isDone = true;
+                        }
+
+                        Spawner.SetNPCs(npc);
+                        foreach (var check in cup.orderCheck)
+                        {
+                            foreach (var ingred in check.ingredients)
+                            {
+                                ingred.ingredient_sprite.gameObject.SetActive(false);
+                            }
+                        }
+
+
                         cup.gameObject.SetActive(false);
                     }
 
@@ -263,6 +282,7 @@ public class playerController : MonoBehaviour
                     }
 
                 }
+                if (col.gameObject.CompareTag("bin")){ UseBin(); }
             }
 
 
@@ -284,8 +304,8 @@ public class playerController : MonoBehaviour
 
                     if(bench.isStove == true)
                     {
-                        //placed.SetActive(false);
-                        //bench.isUsed = false;
+                      //  placed.SetActive(false);
+                       //dw bench.isUsed = false;
                     }
 
                 }
@@ -332,8 +352,8 @@ public class playerController : MonoBehaviour
 
     }
 
-    
 
+    #region 
     private bench getClosest()
     {
         bench bench = null;
@@ -448,22 +468,59 @@ public class playerController : MonoBehaviour
 
         headOBJECT.SetActive(false);
     }
-
+    #endregion
     private void UpdateSpawner()
     {
         timeLeft += 1 * Time.deltaTime;
         if (timeLeft >= SpawnTimer)
         {
+            GameObject cup = Instantiate(cupSpawner.CreateCup()) as GameObject;
+            cup.transform.position = CupTransform.position;
+            cup.SetActive(true);
+            cup.GetComponent<cup>().LoadOrder(orderList);
+
+            foreach (var check in cup.GetComponent<cup>().orderCheck)
+            {
+                foreach (var ingred in check.ingredients)
+                {
+                    ingred.ingredient_sprite.gameObject.SetActive(true);
+                }
+            }
             Spawner.Spawn();
             timeLeft = 0;
         }
+
         if (spawnOnce == true)
         {
             Spawner.Spawn();
             spawnOnce = false;
+            
+            GameObject cup = Instantiate(cupSpawner.CreateCup()) as GameObject;
+            cup.SetActive(true);
+            cup.transform.position = CupTransform.position;
+            cup.GetComponent<cup>().LoadOrder(orderList);
+            foreach(var check in cup.GetComponent<cup>().orderCheck)
+            {
+                foreach(var ingred in check.ingredients)
+                { 
+                    ingred.ingredient_sprite.gameObject.SetActive(true);
+                }
+            }
+           
+           
+           // spawnOnce = false;
             return;
         }
+
+
         
+    }
+
+    private void UseBin()
+    {
+        inventory.Remove(inventory.First());
+        count = 0;
+        RemoveHeadObject();
     }
 
 }

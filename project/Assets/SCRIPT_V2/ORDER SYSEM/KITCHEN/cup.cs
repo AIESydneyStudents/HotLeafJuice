@@ -14,7 +14,11 @@ public class cup : MonoBehaviour
     public void LoadOrder(List<Orders> orders)
     {
         orderCheck = orders;
+       
     }
+
+
+    
 
     public bool CheckOrder()
     {

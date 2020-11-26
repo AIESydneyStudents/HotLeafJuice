@@ -2523,7 +2523,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3015517143123456770, guid: 34df83768b8bfd0489fa96fa0cff063b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34df83768b8bfd0489fa96fa0cff063b, type: 3}
 --- !u!4 &401378092 stripped
 Transform:
@@ -5539,19 +5540,29 @@ MonoBehaviour:
   - kettle
   - pile
   - tea leaves
+  - bin
   inventorySizeLimit: 1
   ingredients: []
-  SpawnTimer: 205.2
+  SpawnTimer: 40
   Spawner: {fileID: 341644774}
   npceditor:
   - name: Tea man
-    difficultyLevel: 2
+    difficultyLevel: 1
     spawnLocation: {fileID: 341644775}
     headMesh: {fileID: 9009893830714642796, guid: 63d76497e55ce0740ba142be51f69694,
       type: 3}
   orderTimer: 0
   filePath: C:\TeaTurmoil\config\order.json
   Orders:
+  - title: Black tea /w milk
+    difficulty: 1
+    warmWater: 0
+    hotWater: 1
+    ingredients:
+    - {fileID: 45352957}
+    - {fileID: 75794696}
+    - {fileID: 357940415}
+    timeLimit: 30
   - title: Black tea /w milk
     difficulty: 2
     warmWater: 0
@@ -6363,7 +6374,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3015517143123456770, guid: 34df83768b8bfd0489fa96fa0cff063b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34df83768b8bfd0489fa96fa0cff063b, type: 3}
 --- !u!4 &980904239 stripped
 Transform:
