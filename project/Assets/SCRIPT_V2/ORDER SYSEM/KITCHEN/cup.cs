@@ -2,27 +2,83 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cup : MonoBehaviour
+public class ListManager<T>
 {
-    [HideInInspector] private List<ingredient> inCup = new List<ingredient>();
-
-    [HideInInspector] public List<Orders> orderCheck;
-    
-    [HideInInspector] List<ingredient> playerIngredients;
+    private List<T> classList = new List<T>();
 
 
-    public void LoadOrder(List<Orders> orders)
+    public ListManager()
     {
-        orderCheck = orders;
-       
+
+    }
+
+    ~ListManager()
+    {
+
+
+    }
+
+    public void SetList(List<T> list)
+    {
+        classList = list;
+    }
+
+    public void RemoveFromList(int index)
+    {
+        classList.RemoveAt(index);
+    }
+
+    public List<T> GetList()
+    {
+        return classList;
     }
 
 
+}
+
+
+
+public class cup : MonoBehaviour
+{
+    private List<ingredient> inCup = new List<ingredient>();
+
+    
+    public ListManager<Orders> orderCheck = new ListManager<Orders>();
+
+    List<Orders> ingredientSprites = new List<Orders>();
+
+    [HideInInspector] List<ingredient> playerIngredients;
+    
+
+    public void LoadOrder(List<Orders> orders)
+    {
+        orderCheck.SetList(orders);
+
+        ingredientSprites = orders;
+      
+    }
+
+    public Orders returnOrder(int count)
+   {       
+        var temp = ingredientSprites[count];
+      
+        return temp;
+    }
+
+    public float ReturnScore()
+    {
+        float result = 0f;
+        foreach(var ingred in orderCheck.GetList())
+        {
+            result += ingred.score;
+        }
+        return result;
+    }
     
 
     public bool CheckOrder()
     {
-        foreach(var b in orderCheck)
+        foreach(var b in orderCheck.GetList())
         {
             if(inCup.Count == b.ingredients.Count - 1)
             {
@@ -35,7 +91,7 @@ public class cup : MonoBehaviour
 
     public bool addIngredient(ingredient ingredient)
     {
-        foreach (var check in orderCheck)
+        foreach (var check in orderCheck.GetList())
         {
             foreach (var ingred in check.ingredients)
             {

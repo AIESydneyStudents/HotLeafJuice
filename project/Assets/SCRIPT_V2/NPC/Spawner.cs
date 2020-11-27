@@ -72,16 +72,16 @@ public class Spawner : MonoBehaviour
             npc.GetComponent<NavMeshAgent>().SetDestination(target.gameObject.transform.position);
             scriptableNPC placedNPC = npc.GetComponent<scriptableNPC>();
             Collider[] colliders = Physics.OverlapSphere( npc.gameObject.transform.position, 1f);
-            foreach(var col in colliders)
-            {
-                if (col.gameObject.tag == "cup")
-                {
-                    recieveTexture.SetActive(true);
+            //foreach(var col in colliders)
+            //{
+            //    if (col.gameObject.tag == "cup")
+            //    {
+            //        recieveTexture.SetActive(true);
 
                    
                     
-                }
-            }
+            //    }
+            //}
         }
       
     }

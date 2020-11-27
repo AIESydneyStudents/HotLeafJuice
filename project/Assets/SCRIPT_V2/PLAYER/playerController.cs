@@ -8,13 +8,14 @@ using System.Text;
 
 public class playerController : MonoBehaviour
 {
-
+    int Acount = 0;
     #region Serilized Fields for inspector
 
     [Header("Player Settings")]
     [SerializeField] private player_movement movement;
     [SerializeField] private float movement_speed;
     [SerializeField] private Transform headAnchor;
+    [SerializeField] private UnityEngine.UI.Image sliderScore;
 
     [Header("Timer")]
     private Timer timer;
@@ -105,7 +106,7 @@ public class playerController : MonoBehaviour
 
     private void Start()
     {
-        timer = new Timer(orderTimer);
+        timer = new Timer(0);
 
         movement.playerAgent.speed = movement_speed;
         cameraController.InitCamera();
@@ -219,7 +220,7 @@ public class playerController : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Fire2"))
-        {
+       {
 
             Collider[] cupCheck = Physics.OverlapSphere(movement.playerAgent.transform.position, pickupRange);
             foreach(var col in cupCheck)
@@ -231,10 +232,10 @@ public class playerController : MonoBehaviour
                     cup.LoadOrder(orderList);
                  //   cup.LoadSprites();
 
+                    // ------------------------------- IF ORDER DONE CORRECTLY -----------------------------------------
                     if(cup.CheckOrder() == true)
                     {
                         List<GameObject> npc = Spawner.GetNPCs();
-
 
                         foreach(var n in npc)
                         {
@@ -242,7 +243,7 @@ public class playerController : MonoBehaviour
                         }
 
                         Spawner.SetNPCs(npc);
-                        foreach (var check in cup.orderCheck)
+                        foreach (var check in cup.orderCheck.GetList())
                         {
                             foreach (var ingred in check.ingredients)
                             {
@@ -250,7 +251,12 @@ public class playerController : MonoBehaviour
                             }
                         }
 
+                        // Math go brrrrr
 
+                        
+                        sliderScore.fillAmount = (Mathf.Clamp(timer.timeRemaining, 1, 10) - 1) / (10 - 1); ;
+
+                        timer.StopTimer();
                         cup.gameObject.SetActive(false);
                     }
 
@@ -450,7 +456,7 @@ public class playerController : MonoBehaviour
         float minutes = Mathf.FloorToInt(timer.timeRemaining / 60);
         float seconds = Mathf.FloorToInt(timer.timeRemaining % 60);
 
-        //timerText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
+        timerText.text = string.Format("Time: {0:00}:{1:00}", minutes, seconds);
 
     }
 
@@ -471,6 +477,7 @@ public class playerController : MonoBehaviour
     #endregion
     private void UpdateSpawner()
     {
+        
         timeLeft += 1 * Time.deltaTime;
         if (timeLeft >= SpawnTimer)
         {
@@ -479,13 +486,15 @@ public class playerController : MonoBehaviour
             cup.SetActive(true);
             cup.GetComponent<cup>().LoadOrder(orderList);
 
-            foreach (var check in cup.GetComponent<cup>().orderCheck)
+            var check = cup.GetComponent<cup>().returnOrder(Acount);
+            Acount += 1;
+            foreach (var sprite in check.ingredients)
             {
-                foreach (var ingred in check.ingredients)
-                {
-                    ingred.ingredient_sprite.gameObject.SetActive(true);
-                }
+                sprite.ingredient_sprite.SetActive(true);
             }
+
+
+            timer.StartTimer(timerLength);
             Spawner.Spawn();
             timeLeft = 0;
         }
@@ -494,21 +503,24 @@ public class playerController : MonoBehaviour
         {
             Spawner.Spawn();
             spawnOnce = false;
-            
+
             GameObject cup = Instantiate(cupSpawner.CreateCup()) as GameObject;
             cup.SetActive(true);
             cup.transform.position = CupTransform.position;
             cup.GetComponent<cup>().LoadOrder(orderList);
-            foreach(var check in cup.GetComponent<cup>().orderCheck)
+
+            var check = cup.GetComponent<cup>().returnOrder(Acount);
+            Acount += 1;
+            foreach (var sprite in check.ingredients)
             {
-                foreach(var ingred in check.ingredients)
-                { 
-                    ingred.ingredient_sprite.gameObject.SetActive(true);
-                }
+                sprite.ingredient_sprite.SetActive(true);
             }
-           
-           
-           // spawnOnce = false;
+
+
+            timer.StartTimer(timerLength);
+
+
+            // spawnOnce = false;
             return;
         }
 
@@ -522,5 +534,56 @@ public class playerController : MonoBehaviour
         count = 0;
         RemoveHeadObject();
     }
+
+}
+
+
+class ScoreTracking
+{
+    struct Scoreboard
+    {
+        public float totalScore;
+        public int limit;
+        public float scoreLimit;
+    }
+
+    float MIN = 1;
+    float MAX = 10;
+
+    public float timer_timeRemaining = 0;
+    public float normalized_score = 0;
+
+    private Scoreboard ScoreBoard = new Scoreboard();
+
+    public void NormalizeScore()
+    {
+        float finalAmount = (Mathf.Clamp(timer_timeRemaining, MIN, MAX) - MIN) / (MAX - MIN);
+    }
+
+    public void AddToScore()
+    {
+        ScoreBoard.totalScore += ScoreBoard.totalScore;
+    }
+
+    public void AddToScore(float score)
+    {
+        ScoreBoard.totalScore += score;
+    }
+
+    public float GetTotalScore()
+    {
+        return ScoreBoard.totalScore;
+    }
+
+    public void SetLimit(int limit)
+    {
+        ScoreBoard.limit = limit;
+    }
+
+    public void SetScoreMax(float maxScore)
+    {
+        ScoreBoard.scoreLimit = maxScore;
+    }
+
 
 }
