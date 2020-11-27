@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 public class player_movement : MonoBehaviour
 {
     public NavMeshAgent playerAgent;
+    public Animator animator;
     
     private float zPos = 0;
     private float xPos = 0;
@@ -43,10 +44,14 @@ public class player_movement : MonoBehaviour
          // Moving on the X axis
         if (xPos > 0)
         {
+            animator.SetTrigger("run");
+            animator.ResetTrigger("idle");
             playerAgent.transform.position += new Vector3(xPos * playerAgent.speed * dt, 0, 0);
         }
         if (xPos < 0)
         {
+            animator.SetTrigger("run");
+            animator.ResetTrigger("idle");
             playerAgent.transform.position += new Vector3(xPos * playerAgent.speed * dt, 0, 0);
         }
 
@@ -54,15 +59,24 @@ public class player_movement : MonoBehaviour
 
         if (zPos > 0)
         {
+            animator.SetTrigger("run");
+            animator.ResetTrigger("idle");
             playerAgent.transform.position += new Vector3(0, 0, zPos * playerAgent.speed * dt);
         }
 
         if (zPos < 0)
         {
+            animator.SetTrigger("run");
+            animator.ResetTrigger("idle");
             playerAgent.transform.position += new Vector3(0, 0, zPos * playerAgent.speed * dt);
         }
+        if (zPos == 0 && xPos == 0)
+        {
+            animator.ResetTrigger("run");
+            animator.SetTrigger("idle");
+        }
 
-   
+
         zPos = 0;
         xPos = 0;
 
