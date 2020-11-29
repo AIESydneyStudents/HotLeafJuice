@@ -45,6 +45,7 @@ public class playerController : MonoBehaviour
    // [SerializeField] private CookingStation CookingStation;
 
     [Header("NPC Settings")]
+    
     [SerializeField] private float SpawnTimer;
     [SerializeField] private Spawner Spawner;
     [System.Serializable]
@@ -270,7 +271,7 @@ public class playerController : MonoBehaviour
                         if (tracker.GetTotalScore() >= tracker.GetLimit())
                         {
                             sliderScore.gameObject.SetActive(true);
-                            sliderScore.fillAmount = (Mathf.Clamp(tracker.timer_timeRemaining, 1, 10) - 1) / (10 - 1);
+                            sliderScore.fillAmount = (Mathf.Clamp(tracker.timer_timeRemaining, 1, 10) - 1) / (10 - 1) / 2;
                         }
 
 
@@ -579,8 +580,6 @@ class ScoreTracking
         ScoreBoard = new Scoreboard();
 
     }
-
-
 
 
     public void NormalizeScore()
