@@ -50,3 +50,39 @@ MonoBehaviour:
     pitch: 1.01
     loop: 1
     source: {fileID: 0}
+  - name: Main_Theme_Normal
+    clip: {fileID: 8300000, guid: 317af262e3c987e4b897322bbe1b8795, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Main_Theme_Speed_Up
+    clip: {fileID: 8300000, guid: 64b017fe268892f4ba35593afc095fc8, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Kettle_Boil
+    clip: {fileID: 8300000, guid: 37077966bde15cc46951d7d471679fd6, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Kettle_Pour
+    clip: {fileID: 8300000, guid: 33aacef92d5197143929574184edcb58, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Ding
+    clip: {fileID: 8300000, guid: 0153016172cd08f43bb179f7d0e010c0, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Thump
+    clip: {fileID: 8300000, guid: eb89e2d0a5e4fff4ea12f69c35d6af36, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
