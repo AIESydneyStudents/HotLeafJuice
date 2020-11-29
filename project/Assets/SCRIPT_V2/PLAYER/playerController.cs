@@ -85,7 +85,7 @@ public class playerController : MonoBehaviour
     [HideInInspector] public List<Orders> orderList = new List<Orders>();
     [HideInInspector] public List<NPC> mainNPCList = new List<NPC>();
 
-
+    private ScoreTracking tracker = new ScoreTracking();
     private bool HoldingKettle = false;
     private float timeLeft = 0;
     private bool spawnOnce = true;
@@ -106,6 +106,10 @@ public class playerController : MonoBehaviour
 
     private void Start()
     {
+
+        tracker.SetLimit(Orders.Count);
+        //tracker.SetLimit(5);
+
         timer = new Timer(0);
 
         movement.playerAgent.speed = movement_speed;
@@ -140,7 +144,16 @@ public class playerController : MonoBehaviour
     
     private void Update()
     {
-        
+        //if(timer.timeRemaining <= 0)
+        //{
+        //    timeLeft = 0;
+        //    List<GameObject> npc = Spawner.GetNPCs();
+        //    foreach (var n in npc)
+        //    {
+        //        SpawnTimer = 0;
+        //        n.GetComponent<scriptableNPC>().isDone = true;
+        //    }
+        //}
 
         cameraController.UpdateCamera(playerCamera, playerTransform, moveRange, cameraSpeed); // Update camera
         movement.ControllerMovement(Time.deltaTime); // Move player
@@ -188,7 +201,7 @@ public class playerController : MonoBehaviour
 
     private void InteractWithGame()
     {
-
+        tracker.timer_timeRemaining = timer.timeRemaining;
         if (Input.GetButtonDown("Fire1"))
         {
             Collider[] near = Physics.OverlapSphere(movement.playerAgent.transform.position, pickupRange);
@@ -252,9 +265,16 @@ public class playerController : MonoBehaviour
                         }
 
                         // Math go brrrrr
+                       tracker.AddToScore(1);
+
+                        if (tracker.GetTotalScore() >= tracker.GetLimit())
+                        {
+                            sliderScore.gameObject.SetActive(true);
+                            sliderScore.fillAmount = (Mathf.Clamp(tracker.timer_timeRemaining, 1, 10) - 1) / (10 - 1);
+                        }
+
 
                         
-                        sliderScore.fillAmount = (Mathf.Clamp(timer.timeRemaining, 1, 10) - 1) / (10 - 1); ;
 
                         timer.StopTimer();
                         cup.gameObject.SetActive(false);
@@ -553,7 +573,15 @@ class ScoreTracking
     public float timer_timeRemaining = 0;
     public float normalized_score = 0;
 
-    private Scoreboard ScoreBoard = new Scoreboard();
+    private Scoreboard ScoreBoard;
+    public ScoreTracking() {
+
+        ScoreBoard = new Scoreboard();
+
+    }
+
+
+
 
     public void NormalizeScore()
     {
@@ -563,6 +591,11 @@ class ScoreTracking
     public void AddToScore()
     {
         ScoreBoard.totalScore += ScoreBoard.totalScore;
+    }
+
+    public float GetLimit()
+    {
+        return ScoreBoard.limit;
     }
 
     public void AddToScore(float score)
