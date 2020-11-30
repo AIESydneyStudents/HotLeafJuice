@@ -145,17 +145,7 @@ public class playerController : MonoBehaviour
     
     private void Update()
     {
-        //if(timer.timeRemaining <= 0)
-        //{
-        //    timeLeft = 0;
-        //    List<GameObject> npc = Spawner.GetNPCs();
-        //    foreach (var n in npc)
-        //    {
-        //        SpawnTimer = 0;
-        //        n.GetComponent<scriptableNPC>().isDone = true;
-        //    }
-        //}
-
+        
         cameraController.UpdateCamera(playerCamera, playerTransform, moveRange, cameraSpeed); // Update camera
         movement.ControllerMovement(Time.deltaTime); // Move player
 
@@ -178,7 +168,7 @@ public class playerController : MonoBehaviour
             {
                 if (kettle.isBoilingWater == true)
                 {
-                    Debug.Log(kettle.Water.temp);
+                   // Debug.Log(kettle.Water.temp);
                     
                     kettle.HeatWater();
 
@@ -266,12 +256,16 @@ public class playerController : MonoBehaviour
                         }
 
                         // Math go brrrrr
-                       tracker.AddToScore(1);
+                        tracker.AddToScore(timer.timeRemaining / 5f);
+
+                        float totalScoreTEMP  = (Mathf.Clamp( tracker.GetTotalScore(), 1, 10) - 1) / (10 - 1);
+                        Debug.Log("TOTAL SCORE: " + totalScoreTEMP);
 
                         if (tracker.GetTotalScore() >= tracker.GetLimit())
                         {
                             sliderScore.gameObject.SetActive(true);
-                            sliderScore.fillAmount = (Mathf.Clamp(tracker.timer_timeRemaining, 1, 10) - 1) / (10 - 1) / 2;
+                           
+                            sliderScore.fillAmount = (Mathf.Clamp(tracker.GetTotalScore(), 1, 10) - 1) / (10 - 1);
                         }
 
 
@@ -388,6 +382,7 @@ public class playerController : MonoBehaviour
         float distance = 0;
         Collider closest = null;
         Collider[] near = Physics.OverlapSphere(movement.playerAgent.transform.position, pickupRange);
+        
         foreach (var collider in near)
         {
             if (collider.CompareTag("bench"))
@@ -400,6 +395,8 @@ public class playerController : MonoBehaviour
                 }
             }
         }
+        
+       
         return bench;
     }
 

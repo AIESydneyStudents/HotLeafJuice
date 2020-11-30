@@ -35,7 +35,7 @@ public class player_movement : MonoBehaviour
         
         playerAgent.gameObject.transform.rotation = Quaternion.Euler(0f, (-heading * Mathf.Rad2Deg), 0f);
 
-        Debug.Log(playerAgent.gameObject.transform.rotation);
+       // Debug.Log(playerAgent.gameObject.transform.rotation);
         
 
         xPos = Input.GetAxis("Horizontal");
