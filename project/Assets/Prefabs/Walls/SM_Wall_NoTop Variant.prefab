@@ -10,11 +10,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 39.355003, y: 152.834, z: 100.00001}
+  m_Extents: {x: 0.39400002, y: 1.5000001, z: 1}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 81.809006, y: 152.834, z: -50.000004}
+  m_Center: {x: 0.818, y: 1.5000001, z: -0.5}
   m_TimeToStationary: 0.5
 --- !u!1001 &4384252816716650245
 PrefabInstance:
@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 5da652c2c353f3449afb248ef19f2db2,
         type: 3}
       propertyPath: m_Name
-      value: SM_Wall_NoTop
+      value: SM_Wall_NoTop Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da652c2c353f3449afb248ef19f2db2, type: 3}
