@@ -68,7 +68,7 @@ MonoBehaviour:
     pitch: 1.01
     loop: 1
     source: {fileID: 0}
-  - name: Kettle_Pour
+  - name: Liquid_Pour
     clip: {fileID: 8300000, guid: 33aacef92d5197143929574184edcb58, type: 3}
     volume: 1
     pitch: 1.01
@@ -76,6 +76,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Ding
     clip: {fileID: 8300000, guid: 0153016172cd08f43bb179f7d0e010c0, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Thump
+    clip: {fileID: 8300000, guid: eb89e2d0a5e4fff4ea12f69c35d6af36, type: 3}
+    volume: 1
+    pitch: 1.01
+    loop: 1
+    source: {fileID: 0}
+  - name: Customer_Arrive
+    clip: {fileID: 8300000, guid: 76b8abffa77ad254f9c82262bbb14d0c, type: 3}
     volume: 1
     pitch: 1.01
     loop: 1
